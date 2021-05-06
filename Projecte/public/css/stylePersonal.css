@@ -1,0 +1,19 @@
+.centrado {
+    /* IMPORTANTE */
+    text-align: center;
+}
+.imagen-prueba {
+    background-image: url('../images/home1.jpg');
+}
+.backgrounDark{
+    background-image: url(../images/background/fondoOscuro.jpg); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+.backgroundGrey{
+    background-image: url(../images/background/fondoGris.jpg); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
