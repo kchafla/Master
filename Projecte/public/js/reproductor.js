@@ -88,7 +88,10 @@ $formulario.submit(function( event ) {
             let $imagen = $("<img>").attr("src", video.snippet.thumbnails.medium.url).attr("id", video.id.videoId).attr("alt", video.snippet.title);
 
             $imagen.click(function() {
-                $.post($("meta[name='newvideo']").attr("content"), { _token: $("meta[name='csrf-token']").attr("content"), room: 1, link: $(this).attr("id") });
+                $.post($("meta[name='newvideo']").attr("content"), { _token: $("meta[name='csrf-token']").attr("content"), room: 1, link: $(this).attr("id") })
+                .done(function() {
+                    $("html, body").animate({scrollTop: 0}, 1000);
+                });
             });
 
             $row.append($carta.append($imagen).append($("<p>").text(video.snippet.title)));
