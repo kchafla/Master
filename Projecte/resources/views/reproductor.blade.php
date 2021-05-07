@@ -19,25 +19,31 @@
             <div class="p-6 bg-dark border-b border-gray-200 text-light backgrounDark">
                     <!---->
                     Pagina de videos
+                    
                     <form id="buscar_form">
-                        <input type="text" name="nom" id="buscar_nom" class="col-md-12 text-dark">
-                        <button>🔎</button>
+                        <div class="row">
+                            <input type="text" name="nom" id="buscar_nom" class="col-md-11 text-dark">
+                            <button class="col-md-1">🔎</button>
+                        </div>
                     </form>
+                    
                     <div class="row">
                         <!--Apartat del video seleccionat-->
                         <div class="col-md-8" height="2500" style="margin-top: 15px;">
-                                <div class="col-md-12" style="padding: 10px; border-color: coral; border-width: 10px; height: 360px">
+                                <div class="col-md-12" style="padding: 10px; height: 360px">
                                     <div id="reproductor" style="width: 100%; height: 100%"></div>
                                 </div>
                         </div>
 
                         <!--Apartat del chat-->
                         <div class="col-md-4" style="margin-top: 15px;">
-                            <div class="col-md-12" style="padding: 10px; border-color: coral; border-width: 10px; height: 360px;">    
-                                <div id="chat"></div>
+                            <div class="col-md-12" style="padding: 10px;">    
+                                <div id="chat">
+                                
+                                </div>
                                 <form action="{{ route('mensaje') }}" id="message_form">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-12 text-dark">
-                                    <button>🔎</button>
+                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark"><button class="col-md-2">🔎</button>
+                                    
                                 </form>
                             </div>
                         </div>

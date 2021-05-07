@@ -17,3 +17,8 @@
     background-repeat: no-repeat; 
     background-size: cover;
 }
+#chat{
+    overflow-y: scroll;
+    height: 290px;
+    border:1px solid silver;
+}
