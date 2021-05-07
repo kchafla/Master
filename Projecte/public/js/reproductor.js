@@ -70,7 +70,7 @@ $formulario.submit(function( event ) {
     event.preventDefault(); 
 
     let key = "AIzaSyBsWcqtCv82R3xB1FjcCw1SSDE_avou5IE";
-    let nom = $formulario.children("#buscar_nom").val();
+    let nom = $formulario.children().children("#buscar_nom").val();
 
     fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=" + nom + "&type=video&key=" + key)
     .then(response => response.json())
