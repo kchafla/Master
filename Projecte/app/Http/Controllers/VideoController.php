@@ -13,6 +13,10 @@ class VideoController extends Controller
 {
     public function newvideo(Request $request)
     {
+        last 
+        if () {
+            # code...
+        }
         $video = new Video;
         $video->setAttribute("room_id", $request->room);
         $video->setAttribute("user_id", Auth::id());
