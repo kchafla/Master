@@ -17,9 +17,7 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-light">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('update')" :active="request()->routeIs('update')" class="text-light">
-                        {{ __('Editar usuari') }}
-                    </x-nav-link>
+                    
                     <x-nav-link :href="route('reproductor')" :active="request()->routeIs('reproductor')" class="text-light">
                         {{ __('Compartir videos') }}
                     </x-nav-link>
@@ -48,6 +46,9 @@
                     
                     <x-slot name="content">
                         <!-- Authentication -->
+                            <x-dropdown-link :href="route('update')" class="text-light">
+                                {{ __('Editar usuari') }}
+                            </x-dropdown-link>
                         
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
