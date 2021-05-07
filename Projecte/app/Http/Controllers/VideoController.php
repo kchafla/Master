@@ -13,15 +13,16 @@ class VideoController extends Controller
 {
     public function newvideo(Request $request)
     {
-        last 
-        if () {
-            # code...
-        }
+        $last = Video::where('room_id', $request->room)->orderByDesc('id')->first();
+
         $video = new Video;
         $video->setAttribute("room_id", $request->room);
         $video->setAttribute("user_id", Auth::id());
         $video->setAttribute("link", $request->link);
-        $video->save();
+
+        if (!$last || $last->link != $request->link) {
+            $video->save();
+        }
 
         event(new NewVideoNotification($video));
 

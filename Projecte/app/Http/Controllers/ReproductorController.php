@@ -10,8 +10,16 @@ class ReproductorController extends Controller
 {
     public function reproductor()
     {
-        $data["video"] = Video::where('room_id', 1)->orderByDesc('id')->first();
+        $video = Video::where('room_id', 1)->orderByDesc('id')->first();
 
-        return view('reproductor', $data);
+        if ($video) {
+            $data["video"] = $video->link;
+
+            return view('reproductor', $data);
+        } else {
+            $data["video"] = "jtyFdK2Y33s";
+
+            return view('reproductor', $data);
+        }
     }
 }
