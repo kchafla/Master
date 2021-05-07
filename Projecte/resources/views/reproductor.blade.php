@@ -1,5 +1,5 @@
 <head>
-    <meta name="lastvideo" content="{{ $video->link }}">
+    <meta name="lastvideo" content="{{ $video }}">
     <meta name="newvideo" content="{{ route('video') }}">
     <meta name="allmessages" content="{{ route('mensajes') }}">
 
