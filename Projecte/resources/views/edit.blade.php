@@ -30,11 +30,13 @@
                             <button type="submit" name="actualitzar" class="btn btn-primary rounded">Enviar</button>
                         
                         </form>
+                        
                     </div>
                     <!---->
                 </div>
             </div>
         </div>
     </div>
+    
     <x-application-footer></x-application-footer>
 </x-app-layout>
