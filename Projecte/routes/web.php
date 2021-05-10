@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EdicioUserController;
 use App\Http\Controllers\VideoController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\ReproductorController;
 use App\Http\Controllers\MessageController;
 
@@ -30,6 +31,8 @@ Route::get('/dashboard', function () {
 Route::get('/prueba', function(){
     return view('prueba');
 });
+
+Route::post('/crear', [VideoController::class, 'newvideo'])->middleware('auth')->name('video');
 
 Route::get('/reproductor', [ReproductorController::class, 'reproductor'])->middleware('auth')->name('reproductor');
 Route::post('/video', [VideoController::class, 'newvideo'])->middleware('auth')->name('video');
