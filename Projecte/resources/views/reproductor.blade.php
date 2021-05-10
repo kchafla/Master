@@ -42,8 +42,8 @@
                                 
                                 </div>
                                 <form action="{{ route('mensaje') }}" id="message_form">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark"><button class="col-md-2">🔎</button>
-                                    
+                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
+                                    <button class="col-md-2">🔎</button>
                                 </form>
                             </div>
                         </div>
