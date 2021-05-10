@@ -32,7 +32,7 @@ Route::get('/prueba', function(){
     return view('prueba');
 });
 
-Route::post('/crear', [VideoController::class, 'newvideo'])->middleware('auth')->name('video');
+Route::post('/crear', [RoomController::class, 'newroom'])->middleware('auth')->name('crear');
 
 Route::get('/reproductor', [ReproductorController::class, 'reproductor'])->middleware('auth')->name('reproductor');
 Route::post('/video', [VideoController::class, 'newvideo'])->middleware('auth')->name('video');
