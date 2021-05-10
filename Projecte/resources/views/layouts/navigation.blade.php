@@ -7,7 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <!--<x-application-logo class="block h-10 w-auto fill-current text-gray-600" />-->
-                        <img src="images/web/logo.png" width="70" height="70" alt="logotip de l'empresa, está basat en un mussol amb el nom de l'empresa Watch With Us">
+                        <img src="{{ asset('images/web/logo.png') }}" width="70" height="70" alt="logotip de l'empresa, está basat en un mussol amb el nom de l'empresa Watch With Us">
                     </a>
                 </div>
 
@@ -16,13 +16,6 @@
                 @if (auth()->check())
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-light">
                         {{ __('Home') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('reproductor')" :active="request()->routeIs('reproductor')" class="text-light">
-                        {{ __('Compartir videos') }}
-                    </x-nav-link>
-                @else
-                    <x-nav-link :href="route('reproductor')" :active="request()->routeIs('reproductor')" class="text-light">
-                        {{ __('Compartir videos') }}
                     </x-nav-link>
                 @endif
                 </div>
@@ -55,12 +48,9 @@
                                 <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                    {{ __('Log out') }}
+                                    {{ __('Sortir') }}
                                 </x-dropdown-link>
                             </form>
-                    
-                            
-                        
                         
                     </x-slot>
                 </x-dropdown>
@@ -103,9 +93,6 @@
             <x-responsive-nav-link :href="route('update')" :active="request()->routeIs('update')">
                 {{ __('Editar usuari') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('reproductor')" :active="request()->routeIs('reproductor')">
-                {{ __('Compartir videos') }}
-            </x-responsive-nav-link>
         </div>
         @else
         <div class="pt-2 pb-3 space-y-1">
@@ -147,7 +134,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log out') }}
+                        {{ __('Sortir') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

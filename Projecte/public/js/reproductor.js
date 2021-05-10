@@ -19,7 +19,7 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) {
-    Echo.private('reproductor')
+    Echo.private($("meta[name='room']").attr("content"))
     .listen('NewVideoNotification', (e) => {
         event.target.loadVideoById(e.video.link, 0, "default");
     })
@@ -38,21 +38,21 @@ let done = false;
 function onPlayerStateChange(event) {
     // REPRODUCTOR ACTIVADO //
     if (event.data == YT.PlayerState.PLAYING) {
-        Echo.private('reproductor')
+        Echo.private($("meta[name='room']").attr("content"))
         .whisper('activar', {
             texto: "YT.PlayerState.PLAYING"
         });
     }
     // REPRODUCTOR EN PAUSA //
     if (event.data == YT.PlayerState.PAUSED) {
-        Echo.private('reproductor')
+        Echo.private($("meta[name='room']").attr("content"))
         .whisper('pausar', {
             texto: "YT.PlayerState.PAUSED"
         });
     }
     // CAMBIAR EL TIEMPO DEL REPRODUCTOR //
     if (event.data == YT.PlayerState.BUFFERING) {
-        Echo.private('reproductor')
+        Echo.private($("meta[name='room']").attr("content"))
         .whisper('tiempo', {
             texto: "YT.PlayerState.BUFFERING",
             tiempo: event.target.getCurrentTime()

@@ -1,7 +1,9 @@
 <head>
+    <meta name="room" content="{{ $sala }}">
+    <meta name="chat" content="{{ $chat }}">
     <meta name="lastvideo" content="{{ $video }}">
     <meta name="newvideo" content="{{ route('video') }}">
-    <meta name="allmessages" content="{{ route('mensajes') }}">
+    <meta name="allmessages" content="{{ url('mensajes/'.$chat) }}">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/reproductor.js') }}" defer></script>
