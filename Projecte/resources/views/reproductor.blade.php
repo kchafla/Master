@@ -38,12 +38,12 @@
                         <!--Apartat del chat-->
                         <div class="col-md-4" style="margin-top: 15px;">
                             <div class="col-md-12" style="padding: 10px;">    
-                                <div id="chat" class="bg-secondary text-black">
+                                <div id="chat" class="backgrounChat text-black">
                                 
                                 </div>
-                                <form action="{{ route('mensaje') }}" id="message_form">
+                                <form action="{{ route('mensaje') }}" id="message_form" class="bg-primary">
                                     <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
-                                    <button class="col-md-2">🔎</button>
+                                    <button class="col-md-1">🔎</button>
                                 </form>
                             </div>
                         </div>
