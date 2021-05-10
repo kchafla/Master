@@ -25,9 +25,9 @@ class MessageController extends Controller
         return back();
     }
 
-    public function recovermessage(Request $request)
+    public function recovermessage($id)
     {
-        $messages = Message::where("chat_id", $request->chat)->get();
+        $messages = Message::where("chat_id", $id)->get();
         $users = User::get();
 
         $data["messages"] = array();

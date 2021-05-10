@@ -1,9 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\EdicioUserController;
+
+use App\Http\Controllers\RoomController;
+use App\Http\Controllers\SalasController;
+
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ReproductorController;
+
 use App\Http\Controllers\MessageController;
 
 /*
@@ -23,19 +29,19 @@ Route::get('/', function () {
 Route::get('/update', function(){
     return view('edit');
 })->name('update');
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 Route::get('/prueba', function(){
     return view('prueba');
 });
 
-Route::get('/reproductor', [ReproductorController::class, 'reproductor'])->middleware('auth')->name('reproductor');
+Route::get('/dashboard', [SalasController::class, 'recoversalas'])->middleware('auth')->name('dashboard');
+Route::get('/crear', [RoomController::class, 'newroom'])->middleware('auth')->name('crear');
+
+Route::get('/reproductor/{id}', [ReproductorController::class, 'reproductor'])->middleware('auth');
 Route::post('/video', [VideoController::class, 'newvideo'])->middleware('auth')->name('video');
-Route::get('/mensajes', [MessageController::class, 'recovermessage'])->middleware('auth')->name('mensajes');
+Route::get('/mensajes/{id}', [MessageController::class, 'recovermessage'])->middleware('auth');
 Route::post('/mensaje', [MessageController::class, 'newmessage'])->middleware('auth')->name('mensaje');
 
-
 Route::post('/updateUser', [EdicioUserController::class, 'edit']);
+
 require __DIR__.'/auth.php';

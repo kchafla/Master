@@ -36,6 +36,6 @@ class NewVideoNotification implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('reproductor');
+        return new PrivateChannel($this->video->room_id);
     }
 }

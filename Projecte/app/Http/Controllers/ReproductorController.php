@@ -4,22 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Room;
 use App\Models\Video;
+use App\Models\Chat;
 
 class ReproductorController extends Controller
 {
-    public function reproductor()
+    public function reproductor($id)
     {
-        $video = Video::where('room_id', 1)->orderByDesc('id')->first();
+        $sala = Room::where('id', $id)->orderByDesc('id')->first();
+        if ($sala) {
+            $data["sala"] = $sala->id;
 
-        if ($video) {
-            $data["video"] = $video->link;
+            $video = Video::where('room_id', $id)->orderByDesc('id')->first();
 
-            return view('reproductor', $data);
+            $chat = Chat::where('room_id', $id)->orderByDesc('id')->first();
+            $data["chat"] = $chat->id;
+
+            if ($video) {
+                $data["video"] = $video->link;
+
+                return view('reproductor', $data);
+            } else {
+                $data["video"] = "jtyFdK2Y33s";
+
+                return view('reproductor', $data);
+            }
         } else {
-            $data["video"] = "jtyFdK2Y33s";
-
-            return view('reproductor', $data);
+            abort(404);
         }
     }
 }
