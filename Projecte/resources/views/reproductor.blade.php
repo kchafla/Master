@@ -23,7 +23,7 @@
                     <form id="buscar_form">
                         <div class="row">
                             <input type="text" name="nom" id="buscar_nom" class="col-md-11 text-dark">
-                            <button class="col-md-1">🔎</button>
+                            <button class="col-md-1 bg-primary">🔎</button>
                         </div>
                     </form>
                     
@@ -38,10 +38,10 @@
                         <!--Apartat del chat-->
                         <div class="col-md-4" style="margin-top: 15px;">
                             <div class="col-md-12" style="padding: 10px;">    
-                                <div id="chat">
+                                <div id="chat" class="bg-secondary text-black">
                                 
                                 </div>
-                                <form action="{{ route('mensaje') }}" id="message_form">
+                                <form action="{{ route('mensaje') }}" id="message_form" class="bg-primary">
                                     <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark"><button class="col-md-2">🔎</button>
                                     
                                 </form>
@@ -62,4 +62,5 @@
             </div>
         </div>
     </div>
+    <x-application-footer></x-application-footer>
 </x-app-layout>

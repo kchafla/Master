@@ -19,4 +19,5 @@
             </div>
         </div>
     </div>
+    <x-application-footer></x-application-footer>
 </x-app-layout>
