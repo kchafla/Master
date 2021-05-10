@@ -15,9 +15,9 @@
 
                         <form action="{{url('updateUser')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            Nou nom per a l'usuari: <br><input type="text" name="name" value="{{Auth::user()->name}}" class="text-dark"><br><br>
+                            Nou nom per a l'usuari: <br><input type="text" name="name" placeholder="{{Auth::user()->name}}" class="text-dark"><br><br>
 
-                            Nou mail per a l'usuari: <br><input type="text" name="email" value="{{Auth::user()->email}}" class="text-dark"><br><br>
+                            Nou mail per a l'usuari: <br><input type="text" name="email" placeholder="{{Auth::user()->email}}" class="text-dark"><br><br>
 
                             Nova contrasenya usuari: <br><input type="password" name="password"><br><br>
 
@@ -36,4 +36,5 @@
             </div>
         </div>
     </div>
+    <x-application-footer></x-application-footer>
 </x-app-layout>

@@ -54,4 +54,5 @@
             </div>
         </form>
     </x-auth-card>
+    <x-application-footer></x-application-footer>
 </x-app-layout>

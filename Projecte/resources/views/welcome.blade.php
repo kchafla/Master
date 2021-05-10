@@ -7,12 +7,12 @@
     <div class="py-10">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 bg-dark border-b border-gray-200 text-light backgrounDark" alt="background fosc" aria="hidden">
+            <div class="p-6 bg-dark  border-gray-200 text-light backgrounDark" alt="background fosc">
                     <!---->
                      <!---->
                     
                     <!--Carousel de imatges-->
-                    <div id="carouselId" class="carousel slide" data-ride="carousel" data-interval="1000">
+                    <div id="carouselId" class="carousel slide" data-ride="carousel" data-interval="1000" aria="hidden">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselId" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselId" data-slide-to="1"></li>
@@ -22,8 +22,6 @@
                             <div class="carousel-item active">
                                 <img src="images/web/home1.jpg" alt="Image1" height="50%"  class="responsive col-md-12 rounded">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5 class="text-dark">Tots junts</h5>
-                                    <p class="text-dark">Tots junts les coses són més divertides.</p>
                                 </div>
                             </div>
                             <div class="carousel-item">
@@ -47,12 +45,12 @@
                     <!--Altres apartats en proces-->
                     <br><br><br>
                     <div class="col-md-12 col-12">
-                        <h5 class="text-info">Comparteix amb els teus amics el millor contingut a la xarxa a temps real</h5>
+                        <h5 class="text-warning">Comparteix amb els teus amics el millor contingut a la xarxa a temps real</h5>
                         <br>
                         <p>Pasa el temps amb els teus amics parlant del video que esteu visualitzant. Paseu el temps com sempre, tots junts, pero amb la seguretat de estar a la teva casa sense preocuparte de portar una mascareta o gel per a les mans.</p>
                     </div>
                     <div class="col-md-12 col-12">
-                        <h5 class="text-info">Gaudeix de la próximitat que ofereix la xarxa</h5>
+                        <h5 class="text-warning">Gaudeix de la próximitat que ofereix la xarxa</h5>
                         <br>
                         <p>Amb tot el succeit amb la pandemia que tots estem patin, gaudeix de pasar un bon temps amb les persones que t'estimes com s'hi fossiu tots en la mateixa habitació. Amb "Watch With Us" compartiu el mateix video al mateix temps i en el moment que un dels dos pausi el video o l'avançi, l'altre també fará aquest canvi.</p>
                     </div>
@@ -62,4 +60,5 @@
             </div>
         </div>
     </div>
+    <x-application-footer></x-application-footer>
 </x-app-layout>
