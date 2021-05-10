@@ -41,9 +41,9 @@
                                 <div id="chat" class="bg-secondary text-black">
                                 
                                 </div>
-                                <form action="{{ route('mensaje') }}" id="message_form" class="bg-primary">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark"><button class="col-md-2">🔎</button>
-                                    
+                                <form action="{{ route('mensaje') }}" id="message_form">
+                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
+                                    <button class="col-md-2">🔎</button>
                                 </form>
                             </div>
                         </div>

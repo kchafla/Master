@@ -7,9 +7,11 @@ Echo.private('reproductor')
 fetch($("meta[name='allmessages']").attr("content") + "?chat=1")
     .then(response => response.json())
     .then(function(messages) {
-        messages.forEach(message => {
-            $("#chat").append($("<p>").text(message.message));
+        messages["messages"].forEach(function(message, index) {
+            $("#chat").append($("<p>").text(message).attr("title", messages["times"][index]));
         });
+
+        $("#chat").scrollTop($("#chat")[0].scrollHeight);
 });
 
 
