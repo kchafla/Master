@@ -25,7 +25,15 @@
                             <br>
                         @endfor
 
-                        <a href="{{ route('crear') }}"><button class="btn btn-primary">Crear una nova sala</button></a>
+                        @if (count($salas) == 5)
+                            <p>No pots crear més sales!</p>
+                        @elseif (count($salas) == 4)
+                            <a href="{{ route('crear') }}"><button class="btn btn-danger">Crear una nova sala</button></a>
+                        @elseif (count($salas) < 4)
+                            <a href="{{ route('crear') }}"><button class="btn btn-warning">Crear una nova sala</button></a>
+                        @elseif (count($salas) < 2)
+                            <a href="{{ route('crear') }}"><button class="btn btn-primary">Crear una nova sala</button></a>
+                        @endif
                    <!---->
                 </div>
             </div>
