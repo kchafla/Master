@@ -72,9 +72,10 @@ $formulario.submit(function( event ) {
     let key = "AIzaSyBsWcqtCv82R3xB1FjcCw1SSDE_avou5IE";
     let nom = $formulario.children().children("#buscar_nom").val();
 
-    fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&q=" + nom + "&type=video&key=" + key)
+    fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&key=" + key + "&q=" + nom)
     .then(response => response.json())
     .then(function(videos) {
+        console.log(videos);
         $("#videos").text("");
 
         let $row = $("<div>").attr("class", "row").attr("style", "padding: 10px;");
@@ -88,7 +89,7 @@ $formulario.submit(function( event ) {
             let $imagen = $("<img>").attr("src", video.snippet.thumbnails.medium.url).attr("id", video.id.videoId).attr("alt", video.snippet.title);
 
             $imagen.click(function() {
-                $.post($("meta[name='newvideo']").attr("content"), { _token: $("meta[name='csrf-token']").attr("content"), room: 1, link: $(this).attr("id") })
+                $.post($("meta[name='newvideo']").attr("content"), { _token: $("meta[name='csrf-token']").attr("content"), link: $(this).attr("id") })
                 .done(function() {
                     $("html, body").animate({scrollTop: 0}, 1000);
                 });

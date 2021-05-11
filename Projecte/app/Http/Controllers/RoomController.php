@@ -12,14 +12,18 @@ class RoomController extends Controller
 {
     public function newroom()
     {
-        $room = new Room;
-        $room->setAttribute("user_id", Auth::id());
-        $room->setAttribute("name", uniqid());
-        $room->save();
+        $sales = Room::where('user_id', Auth::id())->get();
 
-        $chat = new Chat;
-        $chat->setAttribute("room_id", $room->id);
-        $chat->save();
+        if (count($sales) < 5) {
+            $room = new Room;
+            $room->setAttribute("user_id", Auth::id());
+            $room->setAttribute("name", uniqid());
+            $room->save();
+
+            $chat = new Chat;
+            $chat->setAttribute("room_id", $room->id);
+            $chat->save();
+        }
 
         return back();
     }
