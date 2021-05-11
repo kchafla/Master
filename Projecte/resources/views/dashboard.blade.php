@@ -11,7 +11,7 @@
                    <!---->
                         <h3>Hola {{ Auth::user()->name }}</h3>
                         <p>Per a compartir els vídeos únicament necessites compartir el teu link de la sala que acabes de crear.</p>
-                        <h4>Aquí tens les teves sales actives: </h4>
+                        <h4>[{{ count($salas) }}/5] Aquí tens les teves sales: </h4>
                         @for ($i = 0; $i < count($salas); $i++)
                             <div class="row">
                                 <div class="col-md-3">
