@@ -1,7 +1,7 @@
 Echo.private($("meta[name='room']").attr("content"))
 .listen('NewMessageNotification', (e) => {
     $("#chat").append($("<p>").text(e.user + ": " + e.message.message).attr("title", "Enviat el dia " + e.message.created_at.substring(0, 10) + " a les " + e.message.created_at.substring(11, 19) + "."));
-})
+});
 
 // RECUPERAR MENSAJES //
 fetch($("meta[name='allmessages']").attr("content"))

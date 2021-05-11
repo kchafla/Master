@@ -37,10 +37,10 @@ Route::get('/prueba', function(){
 Route::get('/dashboard', [SalasController::class, 'recoversalas'])->middleware('auth')->name('dashboard');
 Route::get('/crear', [RoomController::class, 'newroom'])->middleware('auth')->name('crear');
 
-Route::get('/reproductor/{id}', [ReproductorController::class, 'reproductor'])->middleware('auth');
-Route::post('/video', [VideoController::class, 'newvideo'])->middleware('auth')->name('video');
-Route::get('/mensajes/{id}', [MessageController::class, 'recovermessage'])->middleware('auth');
-Route::post('/mensaje', [MessageController::class, 'newmessage'])->middleware('auth')->name('mensaje');
+Route::get('/sala/{id}', [ReproductorController::class, 'reproductor'])->middleware('auth');
+Route::post('/sala/{id}/video', [VideoController::class, 'newvideo'])->middleware('auth');
+Route::get('/sala/{id}/mensajes/{chat}', [MessageController::class, 'recovermessage'])->middleware('auth');
+Route::post('/sala/{id}/mensaje/{chat}', [MessageController::class, 'newmessage'])->middleware('auth');
 
 Route::post('/updateUser', [EdicioUserController::class, 'edit']);
 
