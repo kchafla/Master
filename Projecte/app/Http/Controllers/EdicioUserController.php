@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\Room;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use File;
 class EdicioUserController extends Controller
@@ -106,11 +109,27 @@ class EdicioUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function editSalas()
     {
-        //
+        $data['salas'] = DB::table('rooms')->select('*')->where('user_id', '=', Auth::user()->id)->get();
+        return view('edicioSalas', $data);
     }
-
+    public function updateSales(Request $request)
+    {
+        if($request->has('delete')){
+            //Checkbox checked
+           Room::destroy($request->id);
+           return redirect('salasEdit');
+        }else{
+            //Not Checked
+            if ($request->name != null){
+                $room = Room::find($request->id);
+                $room->name = $request->name;
+                $room->save();
+                return redirect('salasEdit');
+            }
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
