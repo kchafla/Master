@@ -2,8 +2,8 @@
     <meta name="room" content="{{ $sala }}">
     <meta name="chat" content="{{ $chat }}">
     <meta name="lastvideo" content="{{ $video }}">
-    <meta name="newvideo" content="{{ route('video') }}">
-    <meta name="allmessages" content="{{ url('mensajes/'.$chat) }}">
+    <meta name="newvideo" content="{{ url('sala/'.$sala.'/video') }}">
+    <meta name="allmessages" content="{{ url('sala/'.$sala.'/mensajes/'.$chat) }}">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/reproductor.js') }}" defer></script>
@@ -43,9 +43,10 @@
                                 <div id="chat" class="backgrounChat text-black">
                                 
                                 </div>
-                                <form action="{{ route('mensaje') }}" id="message_form">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-9 col-9 text-dark">
-                                    <button class="col-md-2 col-2 btn btn-primary">🔎</button>
+
+                                <form action="{{ url('sala/'.$sala.'/mensaje/'.$chat) }}" id="message_form" class="bg-primary">
+                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
+                                    <button class="col-md-1 btn btn-primary">🔎</button>
                                 </form>
                             </div>
                         </div>

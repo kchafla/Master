@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 namespace App\Http\Controllers;
 
@@ -12,10 +12,10 @@ use App\Events\NewMessageNotification;
 
 class MessageController extends Controller
 {
-    public function newmessage(Request $request)
+    public function newmessage(Request $request, $id, $chat)
     {
         $message = new Message;
-        $message->setAttribute("chat_id", $request->chat);
+        $message->setAttribute("chat_id", $chat);
         $message->setAttribute("user_id", Auth::id());
         $message->setAttribute("message", $request->body);
         $message->save();
@@ -25,9 +25,9 @@ class MessageController extends Controller
         return back();
     }
 
-    public function recovermessage($id)
+    public function recovermessage($id, $chat)
     {
-        $messages = Message::where("chat_id", $id)->get();
+        $messages = Message::where("chat_id", $chat)->get();
         $users = User::get();
 
         $data["messages"] = array();
