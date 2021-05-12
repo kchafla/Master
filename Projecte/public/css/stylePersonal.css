@@ -76,3 +76,13 @@
     text-decoration: none;
     cursor: pointer;
   }
+    @media (min-width: 900px){  
+        .tablaSalas{
+            width: 25%;
+        }
+    }
+  @media (max-width: 600px) {
+    .ocultar {
+      display: none;
+    }
+  }

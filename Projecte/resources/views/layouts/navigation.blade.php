@@ -17,6 +17,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-light">
                         {{ __('Home') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('salasEdit')" :active="request()->routeIs('salasEdit')" class="text-light">
+                        {{ __('Editar salas') }}
+                    </x-nav-link>
                 @endif
                 </div>
             </div>
@@ -92,6 +95,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('update')" :active="request()->routeIs('update')">
                 {{ __('Editar usuari') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('salasEdit')" :active="request()->routeIs('salasEdit')">
+                {{ __('Editar salas') }}
             </x-responsive-nav-link>
         </div>
         @else

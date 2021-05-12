@@ -44,4 +44,6 @@ Route::post('/mensaje', [MessageController::class, 'newmessage'])->middleware('a
 
 Route::post('/updateUser', [EdicioUserController::class, 'edit']);
 
+Route::get('/salasEdit', [EdicioUserController::class, 'editSalas'])->name('salasEdit');
+Route::post('/salasUpdate', [EdicioUserController::class, 'updateSales'])->name('salasUpdate');
 require __DIR__.'/auth.php';

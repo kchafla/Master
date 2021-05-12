@@ -24,8 +24,8 @@
                     
                     <form id="buscar_form">
                         <div class="row">
-                            <input type="text" name="nom" id="buscar_nom" class="col-md-11 text-dark">
-                            <button class="col-md-1 bg-primary">🔎</button>
+                            <input type="text" name="nom" id="buscar_nom" class="col-md-11 col-10 text-dark">
+                            <button class="col-md-1 col-2 btn btn-primary">🔎</button>
                         </div>
                     </form>
                     
@@ -43,9 +43,9 @@
                                 <div id="chat" class="backgrounChat text-black">
                                 
                                 </div>
-                                <form action="{{ route('mensaje') }}" id="message_form" class="bg-primary">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
-                                    <button class="col-md-1">🔎</button>
+                                <form action="{{ route('mensaje') }}" id="message_form">
+                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-9 col-9 text-dark">
+                                    <button class="col-md-2 col-2 btn btn-primary">🔎</button>
                                 </form>
                             </div>
                         </div>
