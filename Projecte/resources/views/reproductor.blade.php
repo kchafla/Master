@@ -42,8 +42,14 @@
                                 <div id="chat" class="backgrounChat text-black">
                                 
                                 </div>
+<<<<<<< HEAD
                                 <form action="{{ url('sala/'.$sala.'/mensaje/'.$chat) }}" id="message_form" class="bg-primary">
                                     <input type="text" id="message" placeholder="Nuevo mensaje..." class="col-md-10 text-dark">
+=======
+
+                                <form action="{{ url('sala/'.$sala.'/mensaje/'.$chat) }}" id="message_form" class="bg-primary">
+                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
+>>>>>>> 236de55cfe7f6a835a11fa41caa8e99cbac45fab
                                     <button class="col-md-1 btn btn-primary">🔎</button>
                                 </form>
                             </div>
