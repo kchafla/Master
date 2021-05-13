@@ -13,27 +13,27 @@
                         @if (count($salas)>0)
                  
                         <!--Apartat per a modificar les dades de l'usuari-->
-                        <h3>Editar les dades de la sala</h3><br><br><br>
+                        <h3>Editar datos de las salas</h3><br><br><br>
 
                         
                             
                             <div class="row">
-                                <b class="col-7 col-md-4">Nom de la sala</b><b class="ocultar col-md-2">Creada el dia</b><b class="ocultar col-md-2">Modificada</b><b class="col-2 col-md-2">Esborrar</b><b class="col-2 col-md-2">Aplicar canvis</b>
+                                <b class="col-7 col-md-4">Nombre de la sala</b><b class="ocultar col-md-2">Creada el dia</b><b class="ocultar col-md-2">Modificada</b><b class="col-2 col-md-2">Borrar</b><b class="col-2 col-md-2">Aplicar cambios</b>
                             </div>
                             @foreach ($salas as $sala)
                                 @if (Auth::user()->id == $sala->user_id)
                                     <form action="{{url('salasUpdate')}}" method="post">
                                     @csrf
                                         <div class="row">        
-                                            <input type="text" placeholder="{{ $sala->name }}" name="name" class="col-7 col-md-4 text-dark"><p class="col-md-2 ocultar">{{ $sala->created_at }}</p><p class="col-md-2 ocultar">{{ $sala->updated_at }}</p><div class="col-2"><input type="checkbox" name="delete"></div><div class="col-2"><button type="submit" class="btn btn-primary">Aplicar canvis</button></div>                               
+                                            <input type="text" placeholder="{{ $sala->name }}" name="name" class="col-7 col-md-4 text-dark"><p class="col-md-2 ocultar">{{ $sala->created_at }}</p><p class="col-md-2 ocultar">{{ $sala->updated_at }}</p><div class="col-2"><input type="checkbox" name="delete"></div><div class="col-2"><button type="submit" class="btn btn-primary">Aplicar cambios</button></div>                               
                                             <input type="hidden" value="{{ $sala->id }}" name="id">
                                         </div>
                                     </form>
                                 @endif
                             @endforeach
                         @else
-                        <center><h2>No tens cap sala creada</h2></center><br>
-                        <center><p>Crea una sala nova per a poder editar-la</p></center>
+                        <center><h2>No tienes ninguna sala creada</h2></center><br>
+                        <center><p>Crea una sala nueva para poder editarla</p></center>
                         @endif
                     </div>
                     <!---->

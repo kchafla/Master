@@ -1,5 +1,5 @@
 <footer class="bg-dark text-light border-gray-100 backgrounDark footer">
-    <center>Si vols coneixer més de la nostra politica de cookies <button id="myBtn">Cookies</button> <br></center>
+    <center>Si quieres saber más de nuestra politica de <button id="myBtn"><b>Cookies</b></button> <br></center>
 </footer>
 
 <!-- The Modal -->
