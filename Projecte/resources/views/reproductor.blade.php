@@ -20,7 +20,6 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 bg-dark border-b border-gray-200 text-light backgrounDark">
                     <!---->
-                    Pagina de videos
                     
                     <form id="buscar_form">
                         <div class="row">
@@ -43,15 +42,9 @@
                                 <div id="chat" class="backgrounChat text-black">
                                 
                                 </div>
-<<<<<<< HEAD
-                                <form action="{{ route('mensaje') }}" id="message_form">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-9 col-9 text-dark">
-                                    <button class="col-md-2 col-2 btn btn-primary">🔎</button>
-=======
                                 <form action="{{ url('sala/'.$sala.'/mensaje/'.$chat) }}" id="message_form" class="bg-primary">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
-                                    <button class="col-md-1">🔎</button>
->>>>>>> 2b36f9328a8673e7f1fc4732d4bf1ffcc905bbbf
+                                    <input type="text" id="message" placeholder="Nuevo mensaje..." class="col-md-10 text-dark">
+                                    <button class="col-md-1 btn btn-primary">🔎</button>
                                 </form>
                             </div>
                         </div>

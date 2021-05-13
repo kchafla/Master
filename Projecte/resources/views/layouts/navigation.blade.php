@@ -42,7 +42,7 @@
                     <x-slot name="content">
                         <!-- Authentication -->
                             <x-dropdown-link :href="route('update')" class="text-light">
-                                {{ __('Editar usuari') }}
+                                {{ __('Editar usuario') }}
                             </x-dropdown-link>
                         
                             <form method="POST" action="{{ route('logout') }}">
@@ -51,7 +51,7 @@
                                 <x-dropdown-link :href="route('logout')"
                                         onclick="event.preventDefault();
                                                     this.closest('form').submit();">
-                                    {{ __('Sortir') }}
+                                    {{ __('Salir') }}
                                 </x-dropdown-link>
                             </form>
                         
@@ -94,7 +94,7 @@
                 {{ __('Home') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('update')" :active="request()->routeIs('update')">
-                {{ __('Editar usuari') }}
+                {{ __('Editar usuario') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('salasEdit')" :active="request()->routeIs('salasEdit')">
                 {{ __('Editar salas') }}
