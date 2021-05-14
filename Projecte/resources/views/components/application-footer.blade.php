@@ -1,7 +1,6 @@
 <footer class="bg-dark text-light border-gray-100 backgrounDark footer">
     <center>Si vols coneixer més de la nostra politica de cookies <button id="myBtn">Cookies</button> <br></center>
 </footer>
-<button >Open Modal</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">

@@ -33,7 +33,7 @@ class NewMessageNotification implements ShouldBroadcastNow
         $this->message = $message;
 
         $user = User::where('id', $message->user_id)->first();
-        $this->user = $user->name;
+        $this->user = $user;
 
         $sala = Chat::where('id', $message->chat_id)->first();
         $this->room = $sala->room_id;

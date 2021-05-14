@@ -17,6 +17,7 @@ class CreateVideosTable extends Migration
             $table->id();
             $table->foreignId('room_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->string('title');
             $table->string('link');
             $table->timestamps();
         });

@@ -1,13 +1,19 @@
 <head>
     <meta name="room" content="{{ $sala->id }}">
     <meta name="chat" content="{{ $chat }}">
+    <meta name="user" content="{{ Auth::id() }}">
     <meta name="lastvideo" content="{{ $video }}">
-    <meta name="newvideo" content="{{ url('sala/'.$sala.'/video') }}">
-    <meta name="allmessages" content="{{ url('sala/'.$sala.'/mensajes/'.$chat) }}">
+    <meta name="newvideo" content="{{ url('sala/'.$sala->id.'/video') }}">
+    <meta name="allvideos" content="{{ url('sala/'.$sala->id.'/videos') }}">
+    <meta name="allmessages" content="{{ url('sala/'.$sala->id.'/mensajes/'.$chat) }}">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/reproductor.js') }}" defer></script>
     <script src="{{ asset('js/chat.js') }}" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/he/1.2.0/he.min.js" integrity="sha512-PEsccDx9jqX6Dh4wZDCnWMaIO3gAaU0j46W//sSqQhUQxky6/eHZyeB3NrXD2xsyugAKd4KPiDANkcuoEa2JuA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{{ asset('css/prueba.css') }}">
 </head>
 <x-app-layout>
     <x-slot name="header">
@@ -26,39 +32,56 @@
                     <form id="buscar_form">
                         <div class="row">
                             <input type="text" name="nom" id="buscar_nom" class="offset-md-1 col-md-9 text-dark" placeholder="Buscar un video...">
-                            <button id="buscar-video" class="col-md-1 btn btn-primary">Buscar</button>
+                            <button id="buscar-video" class="col-12 col-md-1 btn btn-primary">Buscar</button>
                         </div>
                     </form>
+
+                    <br>
                     
-                    <div class="row">
+                    <div class="row" id="zona_videos">
                         <!--Apartat del video seleccionat-->
-                        <div class="col-md-8" style="margin-top: 15px;">
-                                <div class="col-md-12" style="padding: 10px; height: 460px">
-                                    <div id="reproductor" style="width: 100%; height: 100%"></div>
-                                </div>
+                        <div class="col-md-8">
+                            <div id="reproductor" class="border border-white rounded w-100 h-100"></div>
                         </div>
 
                         <!--Apartat del chat-->
-                        <div class="col-md-4" style="margin-top: 15px;">
-                            <div class="col-md-12" style="padding: 10px;">    
-                                <div id="chat" class="backgrounChat text-black">
-                                
+                        <div class="col-md-4">
+                            <div class="box box-warning direct-chat direct-chat-warning">
+                                <div class="box-header with-border">
+                                    <div class="direct-chat-info clearfix m-0 p-0">
+                                        <h3 class="float-left m-0" id="box-title">Chat</h3>
+                                        <button class="btn btn-primary float-right" id="mode_historial">Historial</button>
+                                        <button class="btn btn-primary float-right" id="mode_chat">Chat</button>
+                                    </div>
                                 </div>
-                                <form action="{{ url('sala/'.$sala.'/mensaje/'.$chat) }}" id="message_form">
-                                    <input type="text" id="message" placeholder="Escriu un nou missatge..." class="col-md-10 text-dark">
-                                    <button class="col-md-2 btn btn-primary">🔎</button>
-                                </form>
+                                <div id="chat_content">
+                                    <div class="box-body">
+                                        <div id="chat" class="direct-chat-messages text-black">
+                                        </div>
+                                    </div>
+                                    <div class="box-footer">
+                                        <form action="{{ url('sala/'.$sala->id.'/mensaje/'.$chat) }}" id="message_form">
+                                            <div class="input-group"> 
+                                                <input type="text" id="message" name="message" placeholder="Enviar un mensaje..." maxlength="255" class="form-control"> 
+                                                <span class="input-group-btn"> 
+                                                    <button type="submit" class="btn btn-primary btn-flat">Enviar</button> 
+                                                </span> 
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div id="video_content">
+                                    <ol class="list-group direct-chat-messages p-2" id="historial">
+
+                                    </ol>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <br>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div id="videos"></div>
-                        </div>
-                    </div>
+                    <div id="videos" class="container p-0 m-0"></div>
 
                     <!---->
                 </div>
