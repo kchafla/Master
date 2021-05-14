@@ -1,14 +1,28 @@
-<footer class="bg-dark text-light border-gray-100 backgrounDark footer">
-    <center>Si quieres saber más de nuestra politica de <button id="myBtn"><b>Cookies</b></button> <br></center>
-</footer>
+<div class="footer-basic backgrounDark">
+        <footer>
+            <div class="social"><a href="#"><i class="icon fab fa-instagram text-light"></i></a><a href="#"><i class="icon fab fa-snapchat-square text-light"></i></a><a href="#"><i class="icon fab fa-twitter text-light"></i></a><a href="#"><i class="icon fab fa-facebook-f text-light"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item text-light"><a href="dashboard">Home</a></li>
+                <li class="list-inline-item text-light"><a href="#">Services</a></li>
+                <li class="list-inline-item text-light"><a href="#">About</a></li>
+                <button data-toggle="modal" data-target="#exampleModal"><li class="list-inline-item text-light">Privacy Policy</li></button>
+            </ul>
+            <p class="copyright">Watch With Us © 2021</p>
+        </footer>
+    </div>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content  bg-dark text-light">
-    <span class="close">&times;</span>
-        <p><h5>¿Qué son las Cookies y para qué se utilizan?</h5><br>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Politica de cookies</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <p><h5>¿Qué son las Cookies y para qué se utilizan?</h5><br>
 
 Las cookies, son ficheros o archivos de texto que un servidor web genera y almacena en el ordenador/smartphone/tablet (en adelante equipo) de un Usuario al acceder a determinadas páginas web, para almacenar y recuperar información sobre la navegación que realiza el usuario desde dicho equipo. También pueden consistir en un código que permite identificar al Usuario inequívocamente durante su navegación. Por ello las cookies pueden almacenar información sobre el equipo de un Usuario o sobre sus sesiones de navegación de los sitios web que ha visitado, tal como página que visita, el tiempo de conexión a Internet, y otros datos según el tipo de cookie.<br><br>
 
@@ -27,6 +41,10 @@ En definitiva, el uso de cookies en la navegación a través del sitio web permi
     <br><br><h5>¿Cuáles son las cookies de terceros utilizadas y la finalidad de uso en el sitio web?</h5>
     <br><table border="1" rules="rows"><tr><th style="width: 20%"><b>Cookies de Terceros</b></th style="width: 40%"><th><b>Proposito</b></th><th style="width: 20%"><b>Proveedor</b></th><th style="width: 20%"><b>Opciones</b></th></tr>
     <tr><td>LARAVEL-SESSION</td><td>Necesitamos una cookie para poder estar logeados en en la pàgina web y no perder la sessión todo el rato.</td><td>Laravel</td><td>Aceptar/Rechazar</td></tr></table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
-
 </div>
