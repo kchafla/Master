@@ -25,7 +25,7 @@
 }
 #chat{
     overflow-y: scroll;
-    height: 290px;
+    height: 400px;
     border:1px solid silver;
 }
 .footer{
@@ -36,7 +36,6 @@
     text-align: center;
     height: 50px;
 }
-
     @media (min-width: 900px){  
         .tablaSalas{
             width: 25%;

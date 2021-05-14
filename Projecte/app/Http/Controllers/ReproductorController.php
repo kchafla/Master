@@ -14,7 +14,7 @@ class ReproductorController extends Controller
     {
         $sala = Room::where('id', $id)->orderByDesc('id')->first();
         if ($sala) {
-            $data["sala"] = $sala->id;
+            $data["sala"] = $sala;
 
             $video = Video::where('room_id', $id)->orderByDesc('id')->first();
 

@@ -31,6 +31,7 @@ class MessageController extends Controller
         $users = User::get();
 
         $data["messages"] = array();
+        $data["users"] = array();
         $data["times"] = array();
 
         for ($n=0; $n < count($messages); $n++) {
@@ -41,8 +42,9 @@ class MessageController extends Controller
                 }
             }
 
-            array_push($data["messages"], $user->name.": ".$message->message);
-            array_push($data["times"], "Enviat el dia ".substr($message->created_at, 0, 10)." a les ".substr($message->created_at, 11).".");
+            array_push($data["messages"], $message->message);
+            array_push($data["users"], $user);
+            array_push($data["times"], substr($message->created_at, 0, 10)." ".substr($message->created_at, 11));
         }
 
         return $data;
