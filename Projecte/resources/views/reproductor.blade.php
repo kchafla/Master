@@ -50,11 +50,19 @@
                                 <div class="box-header with-border">
                                     <div class="direct-chat-info clearfix m-0 p-0">
                                         <h3 class="float-left m-0" id="box-title">Chat</h3>
-                                        <button class="btn btn-primary float-right" id="mode_historial">Historial</button>
-                                        <button class="btn btn-primary float-right" id="mode_chat">Chat</button>
+                                        <div class="dropdown float-right">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Menu
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <a class="dropdown-item" id="ir_chat">Chat</a>
+                                                <a class="dropdown-item" id="ir_historial">Historial</a>
+                                                <a class="dropdown-item" id="ir_participantes">Participantes</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div id="chat_content">
+                                <div id="chat_content" class="mostrando">
                                     <div class="box-body">
                                         <div id="chat" class="direct-chat-messages text-black">
                                         </div>
@@ -72,6 +80,10 @@
                                 </div>
                                 <div id="video_content">
                                     <ol class="list-group direct-chat-messages p-2" id="historial">
+                                    </ol>
+                                </div>
+                                <div id="participants_content">
+                                    <ol class="list-group direct-chat-messages p-2" id="participants">
                                     </ol>
                                 </div>
                             </div>
