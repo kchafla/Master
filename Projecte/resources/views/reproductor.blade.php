@@ -72,7 +72,6 @@
                                 </div>
                                 <div id="video_content">
                                     <ol class="list-group direct-chat-messages p-2" id="historial">
-
                                     </ol>
                                 </div>
                             </div>

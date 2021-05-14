@@ -11,17 +11,17 @@
                     <!---->
                     <div class="centrado">
                         <!--Apartat per a modificar les dades de l'usuari-->
-                        <h3>Editar les dades de l'usuari</h3><br><br><br>
+                        <h3>Editar los datos del usuario</h3><br><br><br>
 
                         <form action="{{url('updateUser')}}" method="post" enctype="multipart/form-data">
                             @csrf
-                            Nou nom per a l'usuari: <br><input type="text" name="name" placeholder="{{Auth::user()->name}}" class="text-dark"><br><br>
+                            Nuevo nombre: <br><input type="text" name="name" placeholder="{{Auth::user()->name}}" class="text-dark"><br><br>
 
-                            Nou mail per a l'usuari: <br><input type="text" name="email" placeholder="{{Auth::user()->email}}" class="text-dark"><br><br>
+                            Nuevo mail: <br><input type="text" name="email" placeholder="{{Auth::user()->email}}" class="text-dark"><br><br>
 
-                            Nova contrasenya usuari: <br><input type="password" name="password"><br><br>
+                            Nueva contraseña: <br><input type="password" name="password"><br><br>
 
-                            Nou fons de pantalla: <br><input type="file" name="background"><br><br>
+                            Nuevo fondo de pantalla: <br><input type="file" name="background"><br><br>
 
                             <input type="hidden" value="{{Auth::user()->id}}" name="id">
 

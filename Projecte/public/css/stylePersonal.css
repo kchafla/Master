@@ -86,3 +86,13 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
+    @media (min-width: 900px){  
+        .tablaSalas{
+            width: 25%;
+        }
+    }
+  @media (max-width: 600px) {
+    .ocultar {
+      display: none;
+    }
+  }

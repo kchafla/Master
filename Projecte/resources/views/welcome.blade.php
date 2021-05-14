@@ -45,14 +45,14 @@
                     <!--Altres apartats en proces-->
                     <br><br><br>
                     <div class="col-md-12 col-12">
-                        <h5 class="text-warning">Comparteix amb els teus amics el millor contingut a la xarxa a temps real</h5>
+                        <h5 class="text-warning">Comparte con tus amigos el mejor contenido de la red a tiempo real</h5>
                         <br>
-                        <p>Pasa el temps amb els teus amics parlant del video que esteu visualitzant. Paseu el temps com sempre, tots junts, pero amb la seguretat de estar a la teva casa sense preocuparte de portar una mascareta o gel per a les mans.</p>
+                        <p>Pasa el tiempo con tus amigos xarlando de los videos que estais viendo. Pasad el tiempo como siempre, todos juntos, pero con la seguridad de estar en tu casa sin preocuparte de llevar una mascarilla y llevar el gel hidroalgelico todo el rato.</p>
                     </div>
                     <div class="col-md-12 col-12">
-                        <h5 class="text-warning">Gaudeix de la próximitat que ofereix la xarxa</h5>
+                        <h5 class="text-warning">Disfruta de la proximidad que ofrece la red</h5>
                         <br>
-                        <p>Amb tot el succeit amb la pandemia que tots estem patin, gaudeix de pasar un bon temps amb les persones que t'estimes com s'hi fossiu tots en la mateixa habitació. Amb "Watch With Us" compartiu el mateix video al mateix temps i en el moment que un dels dos pausi el video o l'avançi, l'altre també fará aquest canvi.</p>
+                        <p>Con todo lo sucedido con la pandemia que todos estamos sufriendo, disfrutaa de pasar un buen rato con las personas que aprecias como si estuvierais todos en la misma habitación. Con "Watch With Us" comparte el mismo video al mismo tiempo i en el momento que alguien pause el video o lo adelante, la otra persona también tendrá lo mismo.</p>
                     </div>
                 <!---->
                     <!---->

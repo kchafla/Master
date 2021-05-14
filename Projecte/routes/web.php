@@ -45,4 +45,6 @@ Route::post('/sala/{id}/mensaje/{chat}', [MessageController::class, 'newmessage'
 
 Route::post('/updateUser', [EdicioUserController::class, 'edit']);
 
+Route::get('/salasEdit', [EdicioUserController::class, 'editSalas'])->name('salasEdit');
+Route::post('/salasUpdate', [EdicioUserController::class, 'updateSales'])->name('salasUpdate');
 require __DIR__.'/auth.php';
