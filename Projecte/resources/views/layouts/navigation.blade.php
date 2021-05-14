@@ -15,7 +15,7 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                 @if (auth()->check())
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-light">
-                        {{ __('Home') }}
+                        {{ __('Tus salas') }}
                     </x-nav-link>
                     <x-nav-link :href="route('salasEdit')" :active="request()->routeIs('salasEdit')" class="text-light">
                         {{ __('Editar salas') }}
@@ -45,7 +45,7 @@
                                 {{ __('Editar usuario') }}
                             </x-dropdown-link>
                         
-                            <form method="POST" action="{{ route('logout') }}">
+                            <form class="m-0" method="POST" action="{{ route('logout') }}">
                                 @csrf
 
                                 <x-dropdown-link :href="route('logout')"
@@ -91,7 +91,7 @@
         @if (auth()->check())
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Home') }}
+                {{ __('Tus salas') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('update')" :active="request()->routeIs('update')">
                 {{ __('Editar usuario') }}
