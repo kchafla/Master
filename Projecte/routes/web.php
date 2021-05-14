@@ -10,6 +10,8 @@ use App\Http\Controllers\SalasController;
 use App\Http\Controllers\VideoController;
 use App\Http\Controllers\ReproductorController;
 
+use App\Http\Controllers\JoinedController;
+
 use App\Http\Controllers\MessageController;
 
 /*
@@ -42,6 +44,7 @@ Route::post('/sala/{id}/video', [VideoController::class, 'newvideo'])->middlewar
 Route::get('/sala/{id}/videos', [VideoController::class, 'recovervideo'])->middleware('auth');
 Route::get('/sala/{id}/mensajes/{chat}', [MessageController::class, 'recovermessage'])->middleware('auth');
 Route::post('/sala/{id}/mensaje/{chat}', [MessageController::class, 'newmessage'])->middleware('auth');
+Route::get('/sala/{id}/invitacion/{token}', [JoinedController::class, 'invitacion'])->middleware('auth');
 
 Route::post('/updateUser', [EdicioUserController::class, 'edit']);
 

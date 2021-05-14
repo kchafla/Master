@@ -14,7 +14,7 @@ class RoomController extends Controller
     {
         $sales = Room::where('user_id', Auth::id())->get();
 
-        if (count($sales) < 5) {
+        if (count($sales) < 6) {
             $room = new Room;
             $room->setAttribute("user_id", Auth::id());
             $room->setAttribute("name", uniqid());
