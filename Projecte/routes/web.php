@@ -39,6 +39,7 @@ Route::get('/crear', [RoomController::class, 'newroom'])->middleware('auth')->na
 
 Route::get('/sala/{id}', [ReproductorController::class, 'reproductor'])->middleware('auth');
 Route::post('/sala/{id}/video', [VideoController::class, 'newvideo'])->middleware('auth');
+Route::get('/sala/{id}/videos', [VideoController::class, 'recovervideo'])->middleware('auth');
 Route::get('/sala/{id}/mensajes/{chat}', [MessageController::class, 'recovermessage'])->middleware('auth');
 Route::post('/sala/{id}/mensaje/{chat}', [MessageController::class, 'newmessage'])->middleware('auth');
 
