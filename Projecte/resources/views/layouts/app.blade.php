@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="{{ asset('css/stylePersonal.css') }}">
 
         <!-- Scripts -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="{{ asset('js/cookies.js') }}" defer></script>
 
