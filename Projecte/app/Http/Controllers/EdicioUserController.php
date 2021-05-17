@@ -109,26 +109,21 @@ class EdicioUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function editSalas()
+/*     public function editSalas()
     {
         $data['salas'] = DB::table('rooms')->select('*')->where('user_id', '=', Auth::user()->id)->get();
         return view('edicioSalas', $data);
-    }
+    } */
     public function updateSales(Request $request)
     {
-        if($request->has('delete')){
-            //Checkbox checked
-           Room::destroy($request->id);
-           return redirect('salasEdit');
-        }else{
-            //Not Checked
-            if ($request->name != null){
-                $room = Room::find($request->id);
-                $room->name = $request->name;
-                $room->save();
-                return redirect('salasEdit');
-            }
+
+        if ($request->name != null){
+            $room = Room::find($request->id);
+            $room->name = $request->name;
+            $room->save();
+            return redirect('dashboard');
         }
+
     }
     /**
      * Remove the specified resource from storage.
@@ -136,8 +131,9 @@ class EdicioUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Request $request)
     {
-        //
+        Room::destroy($request->id);
+        return redirect('dashboard');
     }
 }
