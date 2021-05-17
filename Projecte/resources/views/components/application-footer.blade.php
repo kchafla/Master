@@ -1,11 +1,16 @@
 <div class="footer-basic backgrounDark">
         <footer>
-            <div class="social"><a href="#"><i class="icon fab fa-instagram text-light"></i></a><a href="#"><i class="icon fab fa-snapchat-square text-light"></i></a><a href="#"><i class="icon fab fa-twitter text-light"></i></a><a href="#"><i class="icon fab fa-facebook-f text-light"></i></a></div>
+            <div class="social">
+              <a href="#"><i class="icon fab fa-instagram text-light"></i></a>
+              <a href="#"><i class="icon fab fa-snapchat-square text-light"></i></a>
+              <a href="#"><i class="icon fab fa-twitter text-light"></i></a>
+              <a href="#"><i class="icon fab fa-facebook-f text-light"></i></a>
+            </div>
             <ul class="list-inline">
-                <li class="list-inline-item text-light"><a href="dashboard">Home</a></li>
+                <li class="list-inline-item text-light"><a href="{{ route('dashboard') }}">Página principal</a></li>
                 <li class="list-inline-item text-light"><a href="#">Services</a></li>
                 <li class="list-inline-item text-light"><a href="#">About</a></li>
-                <button data-toggle="modal" data-target="#exampleModal"><li class="list-inline-item text-light">Privacy Policy</li></button>
+                <button data-toggle="modal" data-target="#exampleModal"><li class="list-inline-item text-light">Política de cookies</li></button>
             </ul>
             <p class="copyright">Watch With Us © 2021</p>
         </footer>
@@ -16,7 +21,7 @@
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Politica de cookies</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Política de cookies</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -43,7 +48,7 @@ En definitiva, el uso de cookies en la navegación a través del sitio web permi
     <tr><td>LARAVEL-SESSION</td><td>Necesitamos una cookie para poder estar logeados en en la pàgina web y no perder la sessión todo el rato.</td><td>Laravel</td><td>Aceptar/Rechazar</td></tr></table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

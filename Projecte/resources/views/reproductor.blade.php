@@ -6,6 +6,7 @@
     <meta name="newvideo" content="{{ url('sala/'.$sala->id.'/video') }}">
     <meta name="allvideos" content="{{ url('sala/'.$sala->id.'/videos') }}">
     <meta name="allmessages" content="{{ url('sala/'.$sala->id.'/mensajes/'.$chat) }}">
+    <meta name="allusers" content="{{ url('sala/'.$sala->id.'/participantes') }}">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/reproductor.js') }}" defer></script>
