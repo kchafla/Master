@@ -57,3 +57,20 @@ $chat.submit(function(event) {
         $chat.children().children("#message").val("");
     });
 });
+
+// RECUPERAR USUARIOS //
+fetch($("meta[name='allusers']").attr("content"))
+    .then(response => response.json())
+    .then(function(users) {
+        $li = $("<li>").attr("class", "list-group-item active");
+        $p = $("<p>").text(users["owner"]).attr("class", "direct-chat-name float-left m-0");
+        $("#participants").append($li.append($("<span>").append($p)));
+
+        users["joineds"].forEach(function(user, index) {
+            $li = $("<li>").attr("class", "list-group-item");
+            $p = $("<p>").text(users["users"][index]).attr("class", "direct-chat-name float-left m-0");
+            $a = $("<a>").text("❌").attr("class", "direct-chat-name float-right text-decoration-none").attr("href", "#");
+
+            $("#participants").append($li.append($("<span>").append($p).append($a)));
+        });
+});
