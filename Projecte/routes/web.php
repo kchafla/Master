@@ -47,8 +47,9 @@ Route::post('/sala/{id}/mensaje/{chat}', [MessageController::class, 'newmessage'
 Route::get('/sala/{id}/participantes', [JoinedController::class, 'recoverusers'])->middleware(['joined', 'auth']);
 Route::get('/sala/{id}/invitacion/{token}', [JoinedController::class, 'invitacion'])->middleware('auth');
 
-Route::post('/updateUser', [EdicioUserController::class, 'edit']);
+Route::post('/updateUser', [EdicioUserController::class, 'edit'])->middleware('auth');
 
-Route::get('/salasEdit', [EdicioUserController::class, 'editSalas'])->name('salasEdit');
-Route::post('/salasUpdate', [EdicioUserController::class, 'updateSales'])->name('salasUpdate');
+//Route::get('/salasEdit', [EdicioUserController::class, 'editSalas'])->name('salasEdit')->middleware('auth');
+Route::post('/salasUpdate', [EdicioUserController::class, 'updateSales'])->name('salasUpdate')->middleware('auth');
+Route::post('/delete', [EdicioUserController::class, 'delete'])->name('delete')->middleware('auth');
 require __DIR__.'/auth.php';
