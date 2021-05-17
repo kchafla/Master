@@ -131,21 +131,37 @@ fetch($("meta[name='allvideos']").attr("content"))
 });
 
 $("#video_content").hide();
-$("#mode_chat").hide();
+$("#participants_content").hide();
 
-$("#mode_historial").click(function() {
-    $("#chat_content").slideUp(500, function() {
-        $("#box-title").text("Historial");
-        $("#video_content").slideDown(500);
-        $("#mode_historial").hide();
-        $("#mode_chat").show();
-    });
-});
-$("#mode_chat").click(function() {
-    $("#video_content").slideUp(500, function() {
+$("#ir_chat").click(function() {
+    $(".mostrando").slideUp(500, function() {
+        $("#video_content").attr("class", "");
+        $("#participants_content").attr("class", "");
+        
         $("#box-title").text("Chat");
         $("#chat_content").slideDown(500);
-        $("#mode_chat").hide();
-        $("#mode_historial").show();
+        $("#chat_content").attr("class", "mostrando");
+    });
+});
+
+$("#ir_historial").click(function() {
+    $(".mostrando").slideUp(500, function() {
+        $("#chat_content").attr("class", "");
+        $("#participants_content").attr("class", "");
+
+        $("#box-title").text("Historial");
+        $("#video_content").slideDown(500);
+        $("#video_content").attr("class", "mostrando");
+    });
+});
+
+$("#ir_participantes").click(function() {
+    $(".mostrando").slideUp(500, function() {
+        $("#chat_content").attr("class", "");
+        $("#participants_content").attr("class", "");
+        
+        $("#box-title").text("Participantes");
+        $("#participants_content").slideDown(500);
+        $("#participants_content").attr("class", "mostrando");
     });
 });
