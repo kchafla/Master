@@ -47,7 +47,7 @@
     }
   }
   .footer-basic {
-    padding:40px 0;
+    padding:20px 0;
     background-color:#ffffff;
     color:#4b4c4d;
   }
@@ -104,4 +104,8 @@
     font-size:13px;
     color:#aaa;
     margin-bottom:0;
+  }
+  
+  #nuevasala {
+    height: 412px;
   }

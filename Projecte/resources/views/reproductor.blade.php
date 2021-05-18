@@ -2,11 +2,13 @@
     <meta name="room" content="{{ $sala->id }}">
     <meta name="chat" content="{{ $chat }}">
     <meta name="user" content="{{ Auth::id() }}">
+    <meta name="owner" content="{{ $sala->user_id }}">
     <meta name="lastvideo" content="{{ $video }}">
     <meta name="newvideo" content="{{ url('sala/'.$sala->id.'/video') }}">
     <meta name="allvideos" content="{{ url('sala/'.$sala->id.'/videos') }}">
     <meta name="allmessages" content="{{ url('sala/'.$sala->id.'/mensajes/'.$chat) }}">
     <meta name="allusers" content="{{ url('sala/'.$sala->id.'/participantes') }}">
+    <meta name="removeuser" content="{{ url('sala/'.$sala->id.'/expulsar') }}">
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/reproductor.js') }}" defer></script>
@@ -85,6 +87,13 @@
                                 </div>
                                 <div id="participants_content">
                                     <ol class="list-group direct-chat-messages p-2" id="participants">
+                                        <li class="list-group-item mb-2">
+                                            <p class="text-center">Comparte el siguiente enlace para invitar a más usuarios!</p>
+                                            <div class="row">
+                                                <p class="text-truncate border border-dark p-2 rounded offset-1 col-10" id="linkcompartir">{{ url('sala/'.$sala->id.'/invitacion/'.$sala->token) }}</p>
+                                                <button class="btn btn-primary float-right col-6 offset-3" id="copiar">Copiar el enlace!</button>
+                                            </div>
+                                        </li>
                                     </ol>
                                 </div>
                             </div>

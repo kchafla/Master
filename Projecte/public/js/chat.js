@@ -68,9 +68,26 @@ fetch($("meta[name='allusers']").attr("content"))
 
         users["joineds"].forEach(function(user, index) {
             $li = $("<li>").attr("class", "list-group-item");
-            $p = $("<p>").text(users["users"][index]).attr("class", "direct-chat-name float-left m-0");
-            $a = $("<a>").text("❌").attr("class", "direct-chat-name float-right text-decoration-none").attr("href", "#");
+            $p = $("<p>").text(users["users"][index].name).attr("class", "direct-chat-name float-left m-0");
+            $a = $("<a>").text("❌").attr("class", "direct-chat-name float-right text-decoration-none").attr("href", $("meta[name='removeuser']").attr("content") + "/" + users["users"][index].id);
 
-            $("#participants").append($li.append($("<span>").append($p).append($a)));
+            if ($("meta[name='user']").attr("content") == $("meta[name='owner']").attr("content")) {
+                $li.append($("<span>").append($p).append($a));
+            } else {
+                $li.append($("<span>").append($p));
+            }
+
+            $("#participants").append($li);
         });
+});
+
+$("#copiar").click(function() {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    
+    $temp.val($("#linkcompartir").text()).select();
+    
+    document.execCommand("copy");
+    
+    $temp.remove();
 });
