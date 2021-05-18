@@ -76,9 +76,7 @@ body {
 .callout.callout-warning,
 .alert-warning,
 .label-warning,
-.modal-warning .modal-body {
-    background-color: #0b5ed7 !important
-}
+
 
 .bg-yellow {
     color: #fff !important
@@ -180,10 +178,8 @@ body {
 .dl-horizontal dd:before,
 .form-horizontal .form-group:after,
 .form-horizontal .form-group:before,
-.modal-footer:after,
-.modal-footer:before,
-.modal-header:after,
-.modal-header:before,
+
+
 .nav:after,
 .nav:before,
 .navbar-collapse:after,
