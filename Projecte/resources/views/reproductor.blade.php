@@ -41,12 +41,12 @@
                     
                     <div class="row" id="zona_videos">
                         <!--Apartat del video seleccionat-->
-                        <div class="col-md-8">
+                        <div class="col-md-8 col-12">
                             <div id="reproductor" class="border border-white rounded w-100 h-100"></div>
                         </div>
 
                         <!--Apartat del chat-->
-                        <div class="col-md-4">
+                        <div class="col-md-4 col-12">
                             <div class="box box-warning direct-chat direct-chat-warning">
                                 <div class="box-header with-border">
                                     <div class="direct-chat-info clearfix m-0 p-0">
