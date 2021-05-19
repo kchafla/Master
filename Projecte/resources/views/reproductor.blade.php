@@ -40,45 +40,54 @@
                     </form>
 
                     <br>
-                    
-                    <div class="row" id="zona_videos">
-                        <!--Apartat del video seleccionat-->
-                        <div class="col-md-8">
-                            <div id="reproductor" class="border border-white rounded w-100 h-100"></div>
-                        </div>
+                    <div class="container">
+                        <div class="row" id="zona_videos">
+                            <!--Apartat del video seleccionat-->
+                            <div class="col-md-8 col-12">
+                                <div id="reproductor" class="border border-white rounded w-100 h-100"></div>
+                            </div>
 
-                        <!--Apartat del chat-->
-                        <div class="col-md-4">
-                            <div class="box box-warning direct-chat direct-chat-warning">
-                                <div class="box-header with-border">
-                                    <div class="direct-chat-info clearfix m-0 p-0">
-                                        <h3 class="float-left m-0" id="box-title">Chat</h3>
-                                        <div class="dropdown float-right">
-                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Menu
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <a class="dropdown-item" id="ir_chat">Chat</a>
-                                                <a class="dropdown-item" id="ir_historial">Historial</a>
-                                                <a class="dropdown-item" id="ir_participantes">Participantes</a>
+                            <!--Apartat del chat-->
+                            <div class="col-md-4 col-12 ">
+                                <div class="box box-warning direct-chat direct-chat-warning">
+                                    <div class="box-header with-border">
+                                        <div class="direct-chat-info clearfix ">
+                                            <h3 class="float-left" id="box-title">Chat</h3>
+                                            <div class="dropdown float-right">
+                                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    Menu
+                                                </button>
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    <a class="dropdown-item" id="ir_chat">Chat</a>
+                                                    <a class="dropdown-item" id="ir_historial">Historial</a>
+                                                    <a class="dropdown-item" id="ir_participantes">Participantes</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div id="chat_content" class="mostrando">
-                                    <div class="box-body">
-                                        <div id="chat" class="direct-chat-messages text-black">
+                                    <div id="chat_content" class="mostrando">
+                                        <div class="box-body">
+                                            <div id="chat" class="direct-chat-messages text-black">
+                                            </div>
+                                        </div>
+                                        <div class="box-footer">
+                                            <form action="{{ url('sala/'.$sala->id.'/mensaje/'.$chat) }}" id="message_form">
+                                                <div class="input-group"> 
+                                                    <input type="text" id="message" name="message" placeholder="Enviar un mensaje..." maxlength="255" class="form-control"> 
+                                                    <span class="input-group-btn"> 
+                                                        <button type="submit" class="btn btn-primary btn-flat">Enviar</button> 
+                                                    </span> 
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
-                                    <div class="box-footer">
-                                        <form action="{{ url('sala/'.$sala->id.'/mensaje/'.$chat) }}" id="message_form">
-                                            <div class="input-group"> 
-                                                <input type="text" id="message" name="message" placeholder="Enviar un mensaje..." maxlength="255" class="form-control"> 
-                                                <span class="input-group-btn"> 
-                                                    <button type="submit" class="btn btn-primary btn-flat">Enviar</button> 
-                                                </span> 
-                                            </div>
-                                        </form>
+                                    <div id="video_content">
+                                        <ol class="list-group direct-chat-messages p-2" id="historial">
+                                        </ol>
+                                    </div>
+                                    <div id="participants_content">
+                                        <ol class="list-group direct-chat-messages p-2" id="participants">
+                                        </ol>
                                     </div>
                                 </div>
                                 <div id="video_content">
@@ -97,9 +106,12 @@
                                     </ol>
                                 </div>
                             </div>
+                            
+                            <!--Apartat del chat-->
                         </div>
                     </div>
-
+                    <div class="trampa" style="height: 500px;">
+                    </div>
                     <br>
 
                     <div id="videos" class="container p-0 m-0"></div>
