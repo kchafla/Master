@@ -32,7 +32,7 @@
     <body class="font-sans antialiased">
         @if (auth()->check())
             @if (Auth::user()->background != null)
-                <div class="min-h-screen" style="background-image: url({{ asset('images/background/'.Auth::user()->background) }}); background-position: center; background-repeat: no-repeat; background-size: cover;">
+                <div class="min-h-screen" style="background-image: url({{ asset('images/background/'.Auth::user()->background) }}); background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover;">
             @else
                 <div class="min-h-screen bg-secondary backgroundGrey">
             @endif
