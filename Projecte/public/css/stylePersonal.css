@@ -6,19 +6,19 @@
     background-image: url('../images/home1.jpg');
 }
 .backgrounDark{
-    background-image: url(../images/background/fondoOscuro.jpg); 
+    background-image: url(../images/web/fondoOscuro.jpg); 
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 .backgroundGrey{
-    background-image: url(../images/background/fondoGris.jpg); 
+    background-image: url(../images/web/fondoGris.jpg); 
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
 }
 .backgrounChat{
-    background-image: url(../images/background/fondoChat.jpg); 
+    background-image: url(../images/web/fondoChat.jpg); 
     background-position: center; 
     background-repeat: no-repeat; 
     background-size: cover;
@@ -53,7 +53,7 @@
     }
   }
   .footer-basic {
-    padding:40px 0;
+    padding:20px 0;
     background-color:#ffffff;
     color:#4b4c4d;
   }
@@ -110,4 +110,13 @@
     font-size:13px;
     color:#aaa;
     margin-bottom:0;
+  }
+  
+  #nuevasala {
+    height: 412px;
+  }
+
+  #imagenmas {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1);
   }
