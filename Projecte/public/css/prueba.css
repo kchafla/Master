@@ -3,16 +3,14 @@
     min-width: 100%
 }
 
-body {
-    background-color: #f9f9fa
-}
+
 
 .box.box-warning {
     border-top-color: #3583f8
 }
 
 .box {
-    position: relative;
+
     border-radius: 3px;
     background: #ffffff;
     border-top: 3px solid #d2d6de;
@@ -32,7 +30,7 @@ body {
     color: #444;
     display: block;
     padding: 10px;
-    position: relative
+    /*position: relative*/
 }
 
 .box-header:before,
@@ -49,7 +47,7 @@ body {
     color: #444;
     display: block;
     padding: 10px;
-    position: relative
+    /*position: relative*/
 }
 
 .box-header>.fa,
@@ -63,13 +61,13 @@ body {
 }
 
 .box-header>.box-tools {
-    position: absolute;
+    /*position: absolute;*/
     right: 10px;
     top: 5px
 }
 
 .box-header>.box-tools [data-toggle="tooltip"] {
-    position: relative
+    /*position: relative*/
 }
 
 .bg-yellow,
@@ -99,7 +97,7 @@ body {
 .direct-chat .box-body {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
-    position: relative;
+    /*position: relative;*/
     overflow-x: hidden;
     padding: 0
 }
@@ -200,7 +198,7 @@ body {
 
 .direct-chat-text {
     border-radius: 5px;
-    position: relative;
+    /*position: relative;*/
     padding: 5px 10px;
     background: #d2d6de;
     border: 1px solid #d2d6de;
@@ -262,9 +260,13 @@ body {
     content: "";
     display: table
 }
-
+@media (min-width: 769px){
+    .trampa{
+      display: none;
+    }
+  }
 .input-group-btn {
-    position: relative;
+    /*position: relative;*/
     font-size: 0;
     white-space: nowrap
 }
@@ -293,10 +295,10 @@ body {
 .videoimg {
     cursor: pointer;
 }
-
 #historial {
     height: 460px;
 }
+
 
 #participants {
     height: 460px;
