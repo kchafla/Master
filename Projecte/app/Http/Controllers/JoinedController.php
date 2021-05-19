@@ -30,6 +30,14 @@ class JoinedController extends Controller
             return redirect("dashboard");
         }        
     }
+    
+    public function removeuser($id, $user)
+    {
+        $joined = Joined::where("user_id", $user)->first();
+        $joined->delete();
+
+        return back();
+    }
 
     public function recoverusers($id)
     {
@@ -53,7 +61,7 @@ class JoinedController extends Controller
             }
 
             array_push($data["joineds"], $joined->id);
-            array_push($data["users"], $user->name);
+            array_push($data["users"], $user);
         }
 
         return $data;

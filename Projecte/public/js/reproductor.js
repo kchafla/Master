@@ -158,7 +158,7 @@ $("#ir_historial").click(function() {
 $("#ir_participantes").click(function() {
     $(".mostrando").slideUp(500, function() {
         $("#chat_content").attr("class", "");
-        $("#participants_content").attr("class", "");
+        $("#video_content").attr("class", "");
         
         $("#box-title").text("Participantes");
         $("#participants_content").slideDown(500);

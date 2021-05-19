@@ -45,6 +45,7 @@ Route::get('/sala/{id}/videos', [VideoController::class, 'recovervideo'])->middl
 Route::get('/sala/{id}/mensajes/{chat}', [MessageController::class, 'recovermessage'])->middleware(['joined', 'auth']);
 Route::post('/sala/{id}/mensaje/{chat}', [MessageController::class, 'newmessage'])->middleware(['joined', 'auth']);
 Route::get('/sala/{id}/participantes', [JoinedController::class, 'recoverusers'])->middleware(['joined', 'auth']);
+Route::get('/sala/{id}/expulsar/{user}', [JoinedController::class, 'removeuser'])->middleware(['joined', 'auth']);
 Route::get('/sala/{id}/invitacion/{token}', [JoinedController::class, 'invitacion'])->middleware('auth');
 
 Route::post('/updateUser', [EdicioUserController::class, 'edit'])->middleware('auth');

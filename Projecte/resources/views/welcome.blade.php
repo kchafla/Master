@@ -12,34 +12,26 @@
                      <!---->
                     
                     <!--Carousel de imatges-->
-                    <div id="carouselId" class="carousel slide" data-ride="carousel" data-interval="1000" aria="hidden">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselId" data-slide-to="1"></li>
-                            <li data-target="#carouselId" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner" role="listbox">
+                    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="images/web/home1.jpg" alt="Image1" height="50%"  class="responsive col-md-12 rounded">
-                                <div class="carousel-caption d-none d-md-block">
-                                </div>
+                            <img src="images/web/home1.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/web/home2.jpg" alt="Image2" class="responsive col-md-12 rounded">
+                            <img src="images/web/home2.jpg" class="d-block w-100" alt="...">
                             </div>
                             <div class="carousel-item">
-                                <img src="images/web/home3.jpg" alt="Image3" class="responsive col-md-12 rounded">
+                            <img src="images/web/home3.jpg" class="d-block w-100" alt="...">
                             </div>
-                            
                         </div>
-                        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
 
                     <!--Altres apartats en proces-->

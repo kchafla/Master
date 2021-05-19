@@ -24,7 +24,7 @@ return [
     // ----
 
     // Project name. Shown in the window title.
-    'project_name' => 'Panel de administracion',
+    'project_name' => 'Watch With Us',
 
     // When clicking on the admin panel's top-left logo/name,
     // where should the user be redirected?
@@ -72,7 +72,7 @@ return [
     // ------
 
     // Menu logo. You can replace this with an <img> tag if you have a logo.
-    'project_logo'   => '<b>Back</b>pack',
+    'project_logo'   => ' <img src="https://dawjavi.insjoaquimmir.cat/kchafla/Master/Projecte/public/images/web/logo.png" class="w-100"></img> Watch With Us',
 
     // Show / hide breadcrumbs on admin panel pages.
     'breadcrumbs' => true,
@@ -109,7 +109,7 @@ return [
     'developer_name' => 'Kevin Chafla & Alex Balague',
 
     // Developer website. Link in footer. Type false if you want to hide it.
-    'developer_link' => 'https://moodle.insjoaquimmir.cat/',
+    'developer_link' => 'https://dawjavi.insjoaquimmir.cat/kchafla/Master/Projecte/public',
 
     // Show powered by Laravel Backpack in the footer? true/false
     'show_powered_by' => false,
