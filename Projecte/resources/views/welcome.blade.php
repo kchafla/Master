@@ -35,15 +35,12 @@
                     </div>
 
                     <!--Altres apartats en proces-->
-                    <br><br><br>
-                    <div class="col-md-12 col-12">
+                    <div class="col-md-12 col-12 mt-3">
                         <h5 class="text-warning">Comparte con tus amigos el mejor contenido de la red a tiempo real</h5>
-                        <br>
                         <p>Pasa el tiempo con tus amigos xarlando de los videos que estais viendo. Pasad el tiempo como siempre, todos juntos, pero con la seguridad de estar en tu casa sin preocuparte de llevar una mascarilla y llevar el gel hidroalgelico todo el rato.</p>
                     </div>
-                    <div class="col-md-12 col-12">
+                    <div class="col-md-12 col-12 mt-3">
                         <h5 class="text-warning">Disfruta de la proximidad que ofrece la red</h5>
-                        <br>
                         <p>Con todo lo sucedido con la pandemia que todos estamos sufriendo, disfrutaa de pasar un buen rato con las personas que aprecias como si estuvierais todos en la misma habitación. Con "Watch With Us" comparte el mismo video al mismo tiempo i en el momento que alguien pause el video o lo adelante, la otra persona también tendrá lo mismo.</p>
                     </div>
                 <!---->
