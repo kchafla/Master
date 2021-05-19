@@ -17,7 +17,8 @@ class RoomController extends Controller
         if (count($sales) < 6) {
             $room = new Room;
             $room->setAttribute("user_id", Auth::id());
-            $room->setAttribute("name", uniqid());
+            $room->setAttribute("name", "Sala");
+            $room->setAttribute("token", uniqid());
             $room->save();
 
             $chat = new Chat;

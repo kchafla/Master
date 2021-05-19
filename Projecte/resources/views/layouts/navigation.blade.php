@@ -5,8 +5,11 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <!--<x-application-logo class="block h-10 w-auto fill-current text-gray-600" />-->
+                    @if (auth()->check())
+                        <a href="{{ route('dashboard') }}">
+                    @else
+                        <a href="{{ url('/') }}">
+                    @endif
                         <img src="{{ asset('images/web/logo.png') }}" width="70" height="70" alt="logotip de l'empresa, está basat en un mussol amb el nom de l'empresa Watch With Us">
                     </a>
                 </div>
@@ -61,10 +64,10 @@
                         @auth
                             <a href="{{ url('/dashboard') }}" class="text-sm text-light underline">Dashboard</a>
                         @else
-                            <a href="{{ route('login') }}" class="text-sm text-light underline">Log in</a>
+                            <a href="{{ route('login') }}" class="text-sm text-light underline">Iniciar sesión</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 text-sm text-light underline">Register</a>
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-light underline">Registrarse</a>
                             @endif
                         @endauth
                     </div>
@@ -97,10 +100,10 @@
         @else
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('login')" :active="request()->routeIs('dashboard')">
-                {{ __('Log in') }}
+                {{ __('Iniciar sesión') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('register')" :active="request()->routeIs('dashboard')">
-                {{ __('Register') }}
+                {{ __('Registrarse') }}
             </x-responsive-nav-link>
             
         </div>
@@ -134,7 +137,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Sortir') }}
+                        {{ __('Cerrar sesión') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

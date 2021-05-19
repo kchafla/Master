@@ -1,13 +1,13 @@
-<div class="footer-basic backgrounDark">
+<div class="footer-basic backgrounDark border-top">
         <footer>
             <div class="social">
-              <a href="#"><i class="icon fab fa-instagram text-light"></i></a>
-              <a href="#"><i class="icon fab fa-snapchat-square text-light"></i></a>
-              <a href="#"><i class="icon fab fa-twitter text-light"></i></a>
-              <a href="#"><i class="icon fab fa-facebook-f text-light"></i></a>
+              <a href="#"><i class="icon fab fa-instagram text-light" style="line-height: 1.5;"></i></a>
+              <a href="#"><i class="icon fab fa-snapchat-square text-light" style="line-height: 1.5;"></i></a>
+              <a href="#"><i class="icon fab fa-twitter text-light" style="line-height: 1.5;"></i></a>
+              <a href="#"><i class="icon fab fa-facebook-f text-light" style="line-height: 1.5;"></i></a>
             </div>
             <ul class="list-inline">
-                <li class="list-inline-item text-light"><a href="{{ route('dashboard') }}">Página principal</a></li>
+                <li class="list-inline-item text-light"><a href="{{ url('/') }}">Página principal</a></li>
                 <li class="list-inline-item text-light"><a href="#">Services</a></li>
                 <li class="list-inline-item text-light"><a href="#">About</a></li>
                 <button data-toggle="modal" data-target="#exampleModal"><li class="list-inline-item text-light">Política de cookies</li></button>

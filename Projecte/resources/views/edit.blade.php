@@ -13,7 +13,7 @@
                         <!--Apartat per a modificar les dades de l'usuari-->
                         <h3>Editar los datos del usuario</h3><br><br><br>
 
-                        <form action="{{url('updateUser')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('updateUser') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             Nuevo nombre: <br><input type="text" name="name" placeholder="{{Auth::user()->name}}" class="text-dark"><br><br>
 
@@ -21,7 +21,7 @@
 
                             Nueva contraseña: <br><input type="password" name="password"><br><br>
 
-                            Nuevo fondo de pantalla: <br><input type="file" name="background"><br><br>
+                            Nuevo fondo de pantalla: <br><input type="file" name="background" accept="image/*"><br><br>
 
                             <input type="hidden" value="{{Auth::user()->id}}" name="id">
 
