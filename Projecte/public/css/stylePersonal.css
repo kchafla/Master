@@ -36,11 +36,17 @@
     text-align: center;
     height: 50px;
 }
-    @media (min-width: 900px){  
-        .tablaSalas{
-            width: 25%;
-        }
+
+  @media (min-width: 900px){  
+      .tablaSalas{
+          width: 25%;
+      }
+  }
+  @media (max-width: 770px){
+    .pequeño{
+      margin-bottom: 5px;
     }
+  }
   @media (max-width: 760px) {
     .ocultar {
       display: none;
