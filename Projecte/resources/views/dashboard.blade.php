@@ -108,7 +108,7 @@
                                 @if (count($salas) < 6)
                                     <div class="col-sm-4 mt-3 mt-md-0" id="nuevasala">
                                         <div class="card bg-dark border border-white h-100 d-flex align-items-center justify-content-center">
-                                            <a href="{{ route('crear') }}" class="w-50 h-50"><img class="img-fluid" src="{{ asset('images/web/add.png') }}" alt="Icono con un plus"></a>
+                                            <a href="{{ route('crear') }}" class="w-50 h-50"><img class="img-fluid" src="{{ asset('images/web/add.png') }}" id="imagenmas" alt="Icono con un plus"></a>
                                             <h5 class="card-title text-truncate"">Crear una sala</h5>
                                             <p class="text-muted">[{{ count($salas) }} / 6]</p>
                                         </div>

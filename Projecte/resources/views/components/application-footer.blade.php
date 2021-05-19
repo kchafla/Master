@@ -7,7 +7,7 @@
               <a href="#"><i class="icon fab fa-facebook-f text-light" style="line-height: 1.5;"></i></a>
             </div>
             <ul class="list-inline">
-                <li class="list-inline-item text-light"><a href="{{ route('dashboard') }}">Página principal</a></li>
+                <li class="list-inline-item text-light"><a href="{{ url('/') }}">Página principal</a></li>
                 <li class="list-inline-item text-light"><a href="#">Services</a></li>
                 <li class="list-inline-item text-light"><a href="#">About</a></li>
                 <button data-toggle="modal" data-target="#exampleModal"><li class="list-inline-item text-light">Política de cookies</li></button>
