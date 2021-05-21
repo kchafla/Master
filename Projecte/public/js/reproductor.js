@@ -10,6 +10,11 @@ function onYouTubeIframeAPIReady() {
     player = new YT.Player('reproductor', {
         height: '480',
         width: '960',
+        playerVars: {
+            'rel': 0,
+            'hl': 'es',
+            'modestbranding': 1
+        },
         videoId: $("meta[name='lastvideo']").attr("content"),
         events: {
             'onReady': onPlayerReady,
@@ -71,7 +76,7 @@ $formulario.submit(function( event ) {
     event.preventDefault(); 
 
     let key = "AIzaSyBsWcqtCv82R3xB1FjcCw1SSDE_avou5IE";
-    let nom = $formulario.children().children("#buscar_nom").val();
+    let nom = $formulario.children().children().children("#buscar_nom").val();
 
     fetch("https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=20&type=video&key=" + key + "&q=" + nom)
     .then(response => response.json())
@@ -90,10 +95,7 @@ $formulario.submit(function( event ) {
             let $imagen = $("<img>").attr("src", video.snippet.thumbnails.medium.url).attr("id", video.id.videoId).attr("alt", video.snippet.title).attr("class", "videoimg img-fluid");
 
             $imagen.click(function() {
-                $.post($("meta[name='newvideo']").attr("content"), { _token: $("meta[name='csrf-token']").attr("content"), link: $(this).attr("id"), title: $(this).attr("alt") })
-                .done(function() {
-                    $("html, body").animate({scrollTop: 0}, 1000);
-                });
+                $.post($("meta[name='newvideo']").attr("content"), { _token: $("meta[name='csrf-token']").attr("content"), link: $(this).attr("id"), title: $(this).attr("alt") });
             });
 
             $row.append($carta.append($("<div>").attr("class", "border border-white bg-dark rounded h-100").append($imagen).append($("<p>").text(he.decode(video.snippet.title)).attr("class", "p-2 cartatexto").attr("title", he.decode(video.snippet.title)))));

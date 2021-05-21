@@ -15,10 +15,10 @@
                         <div class="card-header">
                             <ul class="nav nav-tabs card-header-tabs d-flex justify-content-center">
                                 <li class="nav-item col-md-3">
-                                    <a class="nav-link active bg-dark text-light rounded" id="missalas">Tus salas</a>
+                                    <a class="nav-link active bg-dark text-light rounded" id="missalas"><button>Tus salas</button></a>
                                 </li>
                                 <li class="nav-item col-md-3 offset-md-1">
-                                    <a class="nav-link border border-white bg-dark rounded text-secondary" id="otrassalas">Otras salas</a>
+                                    <a class="nav-link border border-white bg-dark rounded text-secondary" id="otrassalas"><button>Otras salas</button></a>
                                 </li>
                             </ul>
                         </div>
@@ -80,7 +80,7 @@
                                                                 <p class="text-light">Nombre de la sala:</p>
                                                                 <form action="{{url('salasUpdate')}}" method="post">
                                                                     @csrf
-                                                                    <input class="text-dark" type="text" placeholder="{{ $salas[$i]->name }}" name="name" maxlength="50">
+                                                                    <input class="text-dark" type="text" placeholder="{{ $salas[$i]->name }}" name="name" maxlength="50" autocomplete="off">
                                                                     <input type="hidden" value="{{ $salas[$i]->id }}" name="id">
                                                             </div>
                                                             <div class="modal-footer">
