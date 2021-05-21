@@ -271,12 +271,6 @@
     white-space: nowrap
 }
 
-.input-group-btn:last-child>.btn,
-.input-group-btn:last-child>.btn-group {
-    z-index: 0;
-    margin-left: -1px
-}
-
 .btn-warning {
     color: #fff;
     background-color: #0b5ed7;

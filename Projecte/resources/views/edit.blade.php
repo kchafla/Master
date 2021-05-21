@@ -15,11 +15,11 @@
 
                         <form action="{{ url('updateUser') }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            Nuevo nombre: <br><input type="text" name="name" placeholder="{{Auth::user()->name}}" class="text-dark"><br><br>
+                            Nuevo nombre: <br><input type="text" name="name" placeholder="{{Auth::user()->name}}" class="text-dark" autocomplete="off"><br><br>
 
-                            Nuevo mail: <br><input type="text" name="email" placeholder="{{Auth::user()->email}}" class="text-dark"><br><br>
+                            Nuevo mail: <br><input type="text" name="email" placeholder="{{Auth::user()->email}}" class="text-dark" autocomplete="off"><br><br>
 
-                            Nueva contraseña: <br><input type="password" name="password"><br><br>
+                            Nueva contraseña: <br><input type="password" name="password" autocomplete="off"><br><br>
 
                             Nuevo fondo de pantalla: <br><input type="file" name="background" accept="image/*"><br><br>
 

@@ -32,10 +32,6 @@ Route::get('/update', function(){
     return view('edit');
 })->name('update');
 
-Route::get('/prueba', function(){
-    return view('prueba');
-});
-
 Route::get('/dashboard', [SalasController::class, 'recoversalas'])->middleware('auth')->name('dashboard');
 Route::get('/crear', [RoomController::class, 'newroom'])->middleware('auth')->name('crear');
 
@@ -50,7 +46,6 @@ Route::get('/sala/{id}/invitacion/{token}', [JoinedController::class, 'invitacio
 
 Route::post('/updateUser', [EdicioUserController::class, 'edit'])->middleware('auth');
 
-//Route::get('/salasEdit', [EdicioUserController::class, 'editSalas'])->name('salasEdit')->middleware('auth');
 Route::post('/salasUpdate', [EdicioUserController::class, 'updateSales'])->name('salasUpdate')->middleware('auth');
 Route::post('/delete', [EdicioUserController::class, 'delete'])->name('delete')->middleware('auth');
 require __DIR__.'/auth.php';
