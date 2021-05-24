@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\CompraController;
+
 use App\Http\Controllers\EdicioUserController;
 
 use App\Http\Controllers\RoomController;
@@ -31,6 +33,9 @@ Route::get('/', function () {
 Route::get('/update', function(){
     return view('edit');
 })->name('update');
+
+Route::get('/pagos', [CompraController::class, 'formdonacion'])->middleware('auth')->name('pagos');
+Route::post('/pagar', [CompraController::class, 'donacion'])->middleware('auth')->name('pagar');
 
 Route::get('/dashboard', [SalasController::class, 'recoversalas'])->middleware('auth')->name('dashboard');
 Route::get('/crear', [RoomController::class, 'newroom'])->middleware('auth')->name('crear');

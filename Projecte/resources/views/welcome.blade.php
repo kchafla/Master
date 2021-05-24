@@ -11,7 +11,7 @@
                 <div class="p-6 text-light h-100 d-flex align-items-center" alt="background fosc">
                     <div class="text-center">
                         <h1>Watch With Us</h1>
-                        <p class="lead">Watch With Us tiene un objetivo simple: facilitar que los amigos vean videos juntos, sin importar en qué parte del mundo se encuentren. La idea de Watch With Us es brindarte un lugar genial donde puedas relajarte y divertirte con tus amigos. <br><br> ¡Disfruta Watch With Us!</p>
+                        <p class="lead">Watch With Us tiene un objetivo simple: facilitar que los amigos vean videos juntos, sin importar en qué parte del mundo se encuentren. La idea de Watch With Us es brindarte un lugar genial donde puedas relajarte y divertirte con tus amigos. <br><br> ¡Disfruta de Watch With Us!</p>
                         <p class="lead">
                         <a href="{{ route('dashboard') }}" class="btn btn-lg btn-dark fw-bold border-white">Crear una sala</a>
                         </p>

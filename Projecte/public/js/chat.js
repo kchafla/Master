@@ -30,7 +30,7 @@ Echo.private($("meta[name='room']").attr("content"))
 .listen('NewMessageNotification', (e) => {
     data = moment(e.message.created_at).format();
 
-    AddMensaje(e.user, data.substring(0, 10) + " " + data.substring(11, 19), e.message.message);
+    AddMensaje(e.user, data.substring(0, 10) + " " + data.substring(11, 19), CryptoJS.AES.decrypt(e.message.message, "WATCHWITHUS").toString(CryptoJS.enc.Utf8));
 
     $("#chat").scrollTop($("#chat")[0].scrollHeight);
 });
@@ -40,7 +40,7 @@ fetch($("meta[name='allmessages']").attr("content"))
     .then(response => response.json())
     .then(function(messages) {
         messages["messages"].forEach(function(message, index) {
-            AddMensaje(messages["users"][index], messages["times"][index], message);
+            AddMensaje(messages["users"][index], messages["times"][index], CryptoJS.AES.decrypt(message, "WATCHWITHUS").toString(CryptoJS.enc.Utf8));
         });
 
         $("#chat").scrollTop($("#chat")[0].scrollHeight);
@@ -52,7 +52,7 @@ let $chat = $("#message_form");
 $chat.submit(function(event) {
     event.preventDefault(); 
 
-    $.post($(this).attr("action"), { _token: $("meta[name='csrf-token']").attr("content"), chat: $("meta[name='chat']").attr("content"), body: $chat.children().children("#message").val() })
+    $.post($(this).attr("action"), { _token: $("meta[name='csrf-token']").attr("content"), chat: $("meta[name='chat']").attr("content"), body: CryptoJS.AES.encrypt($chat.children().children("#message").val(), "WATCHWITHUS").toString() })
     .done(function() {
         $chat.children().children("#message").val("");
     });
@@ -90,4 +90,9 @@ $("#copiar").click(function() {
     document.execCommand("copy");
     
     $temp.remove();
+
+    $("#copiar").text("Enlace copiado!");
+    setTimeout(() => {
+        $("#copiar").text("Copiar el enlace!");
+    }, 3000);
 });

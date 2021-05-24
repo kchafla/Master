@@ -9,6 +9,9 @@ use App\Models\Joined;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Collection;
+
+
 class SalasController extends Controller
 {
     public function recoversalas() {
