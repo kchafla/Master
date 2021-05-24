@@ -63,7 +63,7 @@ class EdicioUserController extends Controller
     public function edit(Request $request)
     {
         $request->validate([
-            'background' => 'mimes:jpeg,bmp,png' // Only allow .jpg, .bmp and .png file types.
+            'background' => 'mimes:jpeg,jpg,gif,bmp,png' // Only allow .jpg, .bmp and .png file types.
         ]);
 
         $user = User::find($request->id);
@@ -122,6 +122,8 @@ class EdicioUserController extends Controller
             $room->name = $request->name;
             $room->save();
             return redirect('dashboard');
+        } else {
+            return back();
         }
 
     }

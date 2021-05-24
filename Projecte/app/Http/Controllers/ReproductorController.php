@@ -20,13 +20,14 @@ class ReproductorController extends Controller
 
             $chat = Chat::where('room_id', $id)->orderByDesc('id')->first();
             $data["chat"] = $chat->id;
+            $data["chat_key"] = $chat->token;
 
             if ($video) {
                 $data["video"] = $video->link;
 
                 return view('reproductor', $data);
             } else {
-                $data["video"] = "jtyFdK2Y33s";
+                $data["video"] = "E2sSvVCRI4s";
 
                 return view('reproductor', $data);
             }

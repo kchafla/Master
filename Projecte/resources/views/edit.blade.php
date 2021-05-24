@@ -9,25 +9,32 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-dark border-b border-gray-200 text-light backgrounDark">
                     <!---->
-                    <div class="centrado">
+                    <div class="d-flex justify-content-center">
                         <!--Apartat per a modificar les dades de l'usuari-->
-                        <h3>Editar los datos del usuario</h3><br><br><br>
-
-                        <form action="{{ url('updateUser') }}" method="post" enctype="multipart/form-data">
+                        <form class="w-50 text-center" action="{{ url('updateUser') }}" method="post" enctype="multipart/form-data">
+                            <h3>Editar datos de usuario</h3>
                             @csrf
-                            Nuevo nombre: <br><input type="text" name="name" placeholder="{{Auth::user()->name}}" class="text-dark" autocomplete="off"><br><br>
-
-                            Nuevo mail: <br><input type="text" name="email" placeholder="{{Auth::user()->email}}" class="text-dark" autocomplete="off"><br><br>
-
-                            Nueva contraseña: <br><input type="password" name="password" autocomplete="off"><br><br>
-
-                            Nuevo fondo de pantalla: <br><input type="file" name="background" accept="image/*"><br><br>
+                            <div class="form-group mt-3">
+                                <label for="name">Nombre de usuario</label>
+                                <input type="text" class="form-control text-dark" name="name" id="name" placeholder="{{Auth::user()->name}}" autocomplete="off">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" class="form-control text-dark" name="email" id="email" placeholder="{{Auth::user()->email}}" autocomplete="off">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control text-dark" name="password" id="password" placeholder="Nueva contraseña..." autocomplete="off">
+                            </div>
+                            <div class="form-group mt-3">
+                                <label for="image">Fondo de pantalla</label>
+                                <input type="file" class="form-control text-dark" name="background" id="image" placeholder="Nueva contraseña..." accept="image/*">
+                            </div>
 
                             <input type="hidden" value="{{Auth::user()->id}}" name="id">
-
                             <input type="hidden" value="{{Auth::user()->background}}" name="actualBack">
 
-                            <button type="submit" name="actualitzar" class="btn btn-primary rounded">Enviar</button>
+                            <button type="submit" name="actualitzar" class="btn btn-primary mt-3">Modificar</button>
                         
                         </form>
                         

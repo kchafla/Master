@@ -9,9 +9,9 @@ class CompraController extends Controller
 {
     public function donacion(Request $request)
     {
-        $stripeCharge = Auth::user()->charge(100, $request->paymentMethodId);
+        $stripeCharge = Auth::user()->charge($request->quantity, $request->paymentMethodId);
 
-        return $stripeCharge;
+        return back();
     }
 
     public function formdonacion()

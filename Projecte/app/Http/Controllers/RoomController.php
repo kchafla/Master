@@ -18,11 +18,12 @@ class RoomController extends Controller
             $room = new Room;
             $room->setAttribute("user_id", Auth::id());
             $room->setAttribute("name", "Sala");
-            $room->setAttribute("token", uniqid());
+            $room->setAttribute("token", bin2hex(random_bytes(16)));
             $room->save();
 
             $chat = new Chat;
             $chat->setAttribute("room_id", $room->id);
+            $chat->setAttribute("token", bin2hex(random_bytes(8)));
             $chat->save();
         }
 
