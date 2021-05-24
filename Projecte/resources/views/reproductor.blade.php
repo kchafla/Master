@@ -1,9 +1,11 @@
 <head>
     <meta name="room" content="{{ $sala->id }}">
     <meta name="chat" content="{{ $chat }}">
+    <meta name="chat_key" content="{{ $chat_key }}">
     <meta name="user" content="{{ Auth::id() }}">
     <meta name="owner" content="{{ $sala->user_id }}">
     <meta name="lastvideo" content="{{ $video }}">
+    <meta name="url" content="{{ url('sala/'.$sala->id) }}">
     <meta name="newvideo" content="{{ url('sala/'.$sala->id.'/video') }}">
     <meta name="allvideos" content="{{ url('sala/'.$sala->id.'/videos') }}">
     <meta name="allmessages" content="{{ url('sala/'.$sala->id.'/mensajes/'.$chat) }}">

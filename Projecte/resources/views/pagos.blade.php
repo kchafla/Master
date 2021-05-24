@@ -15,13 +15,21 @@
                         <h4 class="text-white">Donacion a Watch With Us</h4>
                     </div>
                     <div class="card-body">
-                        <div id="errors" class="alert alert-danger alert-dismissible fade show p-3" role="alert">
+                        <div id="errors" class="alert alert-danger fade show p-3" role="alert">
                             <span id="error_text"></span>
+                        </div>
+                        <div id="correcto" class="alert alert-success fade show p-3" role="alert">
+                            <span>Compra realizada correctamente!</span>
                         </div>
                         <form>
                             <div class="form-group">
                                 <label for="card-holder-name">Nombre</label>
-                                <input type="text" class="form-control" id="card-holder-name" placeholder="Escribe tu nombre...">
+                                <input type="text" class="form-control" id="card-holder-name" placeholder="Escribe tu nombre..." required/>
+                            </div>
+
+                            <div class="form-group mt-3">
+                                <label for="card-holder-name">Cantidad (€)</label>
+                                <input type="number" class="form-control" id="donation-quantity" placeholder="Ingresa una cantidad..." value="1" min="1.00" max="20.00" step="0.01" required/>
                             </div>
 
                             <div class="form-group mt-3">

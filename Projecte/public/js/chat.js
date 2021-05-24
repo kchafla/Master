@@ -25,12 +25,13 @@ function AddMensaje(user, time, body) {
     $("#chat").append($message.append($header).append($body));
 }
 
+var chat_key = $("meta[name='chat_key']").attr("content");
 
 Echo.private($("meta[name='room']").attr("content"))
 .listen('NewMessageNotification', (e) => {
     data = moment(e.message.created_at).format();
 
-    AddMensaje(e.user, data.substring(0, 10) + " " + data.substring(11, 19), CryptoJS.AES.decrypt(e.message.message, "WATCHWITHUS").toString(CryptoJS.enc.Utf8));
+    AddMensaje(e.user, data.substring(0, 10) + " " + data.substring(11, 19), CryptoJS.AES.decrypt(e.message.message, chat_key).toString(CryptoJS.enc.Utf8));
 
     $("#chat").scrollTop($("#chat")[0].scrollHeight);
 });
@@ -40,7 +41,7 @@ fetch($("meta[name='allmessages']").attr("content"))
     .then(response => response.json())
     .then(function(messages) {
         messages["messages"].forEach(function(message, index) {
-            AddMensaje(messages["users"][index], messages["times"][index], CryptoJS.AES.decrypt(message, "WATCHWITHUS").toString(CryptoJS.enc.Utf8));
+            AddMensaje(messages["users"][index], messages["times"][index], CryptoJS.AES.decrypt(message, chat_key).toString(CryptoJS.enc.Utf8));
         });
 
         $("#chat").scrollTop($("#chat")[0].scrollHeight);
@@ -52,11 +53,38 @@ let $chat = $("#message_form");
 $chat.submit(function(event) {
     event.preventDefault(); 
 
-    $.post($(this).attr("action"), { _token: $("meta[name='csrf-token']").attr("content"), chat: $("meta[name='chat']").attr("content"), body: CryptoJS.AES.encrypt($chat.children().children("#message").val(), "WATCHWITHUS").toString() })
+    $.post($(this).attr("action"), { _token: $("meta[name='csrf-token']").attr("content"), chat: $("meta[name='chat']").attr("content"), body: CryptoJS.AES.encrypt($chat.children().children("#message").val(), chat_key).toString() })
     .done(function() {
         $chat.children().children("#message").val("");
     });
 });
+
+function NewUser(user) {
+    $li = $("<li>").attr("class", "list-group-item").attr("id", user.id);
+    $p = $("<p>").text(user.name).attr("class", "direct-chat-name float-left m-0");
+    $a = $("<a>").text("❌").attr("class", "direct-chat-name float-right text-decoration-none").attr("style", "cursor: pointer;");
+
+    $a.click(function() {
+        $.get($("meta[name='removeuser']").attr("content") + "/" + user.id);
+    });
+
+    if ($("meta[name='user']").attr("content") == $("meta[name='owner']").attr("content")) {
+        $li.append($("<span>").append($p).append($a));
+    } else {
+        $li.append($("<span>").append($p));
+    }
+
+    $("#participants").append($li);
+}
+
+Echo.private($("meta[name='room']").attr("content"))
+    .listen('RemoveUserNotification', (e) => {
+        $("#" + e.user).remove();
+        $("#linkcompartir").text($("meta[name='url']").attr("content") + "/invitacion/" + e.token);
+    })
+    .listen('NewUserNotification', (e) => {
+        NewUser(e.user);
+    });
 
 // RECUPERAR USUARIOS //
 fetch($("meta[name='allusers']").attr("content"))
@@ -67,17 +95,7 @@ fetch($("meta[name='allusers']").attr("content"))
         $("#participants").append($li.append($("<span>").append($p)));
 
         users["joineds"].forEach(function(user, index) {
-            $li = $("<li>").attr("class", "list-group-item");
-            $p = $("<p>").text(users["users"][index].name).attr("class", "direct-chat-name float-left m-0");
-            $a = $("<a>").text("❌").attr("class", "direct-chat-name float-right text-decoration-none").attr("href", $("meta[name='removeuser']").attr("content") + "/" + users["users"][index].id);
-
-            if ($("meta[name='user']").attr("content") == $("meta[name='owner']").attr("content")) {
-                $li.append($("<span>").append($p).append($a));
-            } else {
-                $li.append($("<span>").append($p));
-            }
-
-            $("#participants").append($li);
+            NewUser(users["users"][index]);
         });
 });
 

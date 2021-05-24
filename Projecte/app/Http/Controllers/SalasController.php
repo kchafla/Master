@@ -27,7 +27,7 @@ class SalasController extends Controller
             if ($last != null) {
                 array_push($data["videos"], $last->link);
             } else {
-                array_push($data["videos"], "jtyFdK2Y33s");
+                array_push($data["videos"], "E2sSvVCRI4s");
             }
         }
 

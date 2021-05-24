@@ -9,6 +9,9 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+use App\Events\RemoveUserNotification;
+use App\Events\NewUserNotification;
+
 class JoinedController extends Controller
 {
     public function invitacion($id, $token)
@@ -23,7 +26,9 @@ class JoinedController extends Controller
                 $joined->setAttribute("room_id", $id);
                 $joined->setAttribute("user_id", Auth::id());
                 $joined->save();
-            } 
+
+                event(new NewUserNotification(Auth::user(), $id));
+            }
 
             return redirect("sala/".$id);
         } else {
@@ -35,6 +40,12 @@ class JoinedController extends Controller
     {
         $joined = Joined::where("user_id", $user)->first();
         $joined->delete();
+
+        $room = Room::where("id", $id)->first();
+        $room->token = bin2hex(random_bytes(16));
+        $room->save();
+
+        event(new RemoveUserNotification($user, $room));
 
         return back();
     }
@@ -50,7 +61,6 @@ class JoinedController extends Controller
         $room = Room::where("id", $id)->first();
         $owner = User::where("id", $room->user_id)->first();
         $data["owner"] = $owner->name;
-
 
         for ($n=0; $n < count($joineds); $n++) {
             $joined = $joineds[$n];

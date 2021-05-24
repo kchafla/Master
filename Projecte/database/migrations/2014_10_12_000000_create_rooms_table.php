@@ -17,8 +17,7 @@ class CreateRoomsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->string('name');
-            $table->string('background')->nullable();
-            $table->string('name')->nullable();
+            $table->string('token')->nullable();
             $table->timestamps();
         });
     }
