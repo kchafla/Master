@@ -1,9 +1,9 @@
 <div class="footer-basic backgrounDark border-top">
         <footer>
             <div class="social">
-              <a href="#" title="Instagram"><i class="icon fab fa-instagram text-light" style="line-height: 1.5;"></i></a>
-              <a href="#" title="Twitter"><i class="icon fab fa-twitter text-light" style="line-height: 1.5;"></i></a>
-              <a href="#" title="Facebook"><i class="icon fab fa-facebook-f text-light" style="line-height: 1.5;"></i></a>
+              <a href="https://www.instagram.com" title="Instagram" target="_blank"><i class="icon fab fa-instagram text-light" style="line-height: 1.5;"></i></a>
+              <a href="https://twitter.com" title="Twitter" target="_blank"><i class="icon fab fa-twitter text-light" style="line-height: 1.5;"></i></a>
+              <a href="https://www.facebook.com" title="Facebook" target="_blank"><i class="icon fab fa-facebook-f text-light" style="line-height: 1.5;"></i></a>
             </div>
             <ul class="list-inline">
                 <li class="list-inline-item text-light"><a href="{{ url('/') }}">Página principal</a></li>
@@ -12,7 +12,10 @@
                   <li class="list-inline-item"><a>Política de privacidad</a></li>
                 </button>
             </ul>
-            <p class="copyright">Watch With Us © 2021</p>
+            <div class="copyright">
+              <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">Watch With Us tiene licencia bajo 
+ <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" class="text-decoration-none">CC BY-NC-SA 4.0</a></p>
+            </div>
         </footer>
     </div>
 
@@ -27,7 +30,7 @@
       </div>
       <div class="modal-body">
         <div class="alert alert-danger fade show text-center" role="alert">
-          <span>La política de privacidad se está traduciendo actualmente, disculpe las molestias.</span>
+          <span>La política de privacidad está siendo traducida actualmente, disculpe las molestias.</span>
         </div>
       <style>
         [data-custom-class='title'], [data-custom-class='title'] * {
